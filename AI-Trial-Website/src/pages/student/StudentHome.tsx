@@ -30,7 +30,7 @@ export default function StudentHome() {
           Jump into a classroom, track your performance, or let the AI tutor do the heavy lifting.
         </p>
 
-        <div className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 @2xl:grid-cols-2">
+        <div className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 @2xl:grid-cols-3">
           <div className="rl-reveal h-full" style={stagger(3)}>
             <RoleCard
               title="Classroom"

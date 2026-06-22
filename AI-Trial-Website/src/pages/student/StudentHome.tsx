@@ -1,6 +1,6 @@
 import { AppShell } from "../../components/layout/AppShell";
 import { RoleCard } from "../../components/ui/RoleCard";
-import { IconClassroom, IconSparkles } from "../../components/ui/Icons";
+import { IconChart, IconClassroom, IconSparkles } from "../../components/ui/Icons";
 import { useAuth } from "../../context/AuthContext";
 import { CLASSES } from "../../data";
 import { stagger } from "../../lib/format";
@@ -27,7 +27,7 @@ export default function StudentHome() {
           Welcome back, <span className="text-mint">{firstName}</span>.
         </h1>
         <p className="rl-reveal mt-3 text-ink-dim" style={stagger(2)}>
-          Jump into a classroom or let the AI tutor do the heavy lifting.
+          Jump into a classroom, track your performance, or let the AI tutor do the heavy lifting.
         </p>
 
         <div className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 @2xl:grid-cols-2">
@@ -51,11 +51,21 @@ export default function StudentHome() {
               cta="Open AI tools"
             />
           </div>
+          <div className="rl-reveal" style={stagger(5)}>
+            <RoleCard
+              title="Performance"
+              description="See your scores, attendance and obedience trends — the same live dashboard your parents see."
+              icon={<IconChart size={28} />}
+              to="/student/performance"
+              accent="amber"
+              cta="View performance"
+            />
+          </div>
         </div>
 
         <div
           className="rl-reveal mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-dim"
-          style={stagger(5)}
+          style={stagger(6)}
         >
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-info" />

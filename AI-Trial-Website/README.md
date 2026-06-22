@@ -39,8 +39,11 @@ The front page has four portals — **Students** and **Parents** are fully built
   - **Ask AI Question** — a scripted chat tutor with worked, step-by-step answers.
 - **Student → Classroom** — Google-Classroom-style class list + per-class
   Stream / Tasks / Files / People.
+- **Student → Performance** — the student's own live progress dashboard
+  (same data and layout the Parent sees).
 - **Parent dashboard** — 5 stat tiles, a dual-line progress chart, and a
-  scrolling announcements log, all on one no-scroll screen.
+  scrolling announcements log, all on one no-scroll screen. Shared with the
+  student Performance page via `components/dashboard/PerformanceDashboard`.
 
 ## Scripted demo flow (Practice)
 

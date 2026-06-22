@@ -1,6 +1,5 @@
 import { Logo } from "../components/ui/Logo";
 import { RoleCard } from "../components/ui/RoleCard";
-import { Badge } from "../components/ui/Badge";
 import {
   IconAdmin,
   IconParent,

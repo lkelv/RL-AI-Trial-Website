@@ -34,13 +34,13 @@ const STEPS = [
   { label: "Difficulty", title: "Set the difficulty", desc: "Select one or more levels. We'll split the paper by the percentages you choose." },
   { label: "Type", title: "Paper type", desc: "What kind of paper do you want to generate?" },
   { label: "Questions", title: "How many questions?", desc: "Choose how long your paper should be." },
-  { label: "Source", title: "Where from?", desc: "Split your paper between authentic VCAA and RL-modified questions." },
+  { label: "Source", title: "Where from?", desc: "Split your paper between authentic VCAA papers and the RL Question Bank." },
 ];
 
 const GEN_PHASES = [
   "Analysing topics & difficulty",
   "Selecting VCAA questions",
-  "Generating modified questions",
+  "Pulling from the RL Question Bank",
   "Compiling worked solutions",
   "Finalising your papers",
 ];
@@ -434,7 +434,7 @@ export default function PracticeWizard() {
                   <div className="mt-4 flex items-center justify-center gap-2 font-mono text-sm">
                     <span className="text-mint">{s.vcaaCount} VCAA</span>
                     <span className="text-ink-faint">+</span>
-                    <span className="text-amber">{s.modifiedCount} modified</span>
+                    <span className="text-amber">{s.modifiedCount} RL Question Bank</span>
                     <span className="text-ink-faint">=</span>
                     <span className="text-ink">{s.vcaaCount + s.modifiedCount}</span>
                     <span className="text-ink-faint">/ {s.questionCount}</span>

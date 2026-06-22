@@ -1,5 +1,11 @@
 import type { PracticeSelection } from "../../../types";
-import { DIFFICULTIES, PAPER_TYPES_BY_FAMILY, PRACTICE_PDFS, getSubject } from "../../../data";
+import {
+  DIFFICULTIES,
+  PAPER_TYPES_BY_FAMILY,
+  PRACTICE_PDFS,
+  SOURCE_LABELS,
+  getSubject,
+} from "../../../data";
 import { PdfViewer } from "../../../components/pdf/PdfViewer";
 import { Button } from "../../../components/ui/Button";
 import { Badge } from "../../../components/ui/Badge";
@@ -37,7 +43,7 @@ function summaryChips(s: PracticeSelection): string[] {
   }
   if (paper) chips.push(paper);
   chips.push(`${s.questionCount} questions`);
-  chips.push(`${s.vcaaCount} VCAA · ${s.modifiedCount} modified`);
+  chips.push(`${s.vcaaCount} ${SOURCE_LABELS.vcaa.title} · ${s.modifiedCount} ${SOURCE_LABELS.modified.title}`);
   return chips;
 }
 

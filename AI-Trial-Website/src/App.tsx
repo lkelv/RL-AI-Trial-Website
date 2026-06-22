@@ -10,6 +10,7 @@ import AiMarking from "./pages/student/AiMarking";
 import AskAi from "./pages/student/AskAi";
 import ClassroomList from "./pages/student/classroom/ClassroomList";
 import ClassroomDetail from "./pages/student/classroom/ClassroomDetail";
+import StudentPerformance from "./pages/student/StudentPerformance";
 import ParentDashboard from "./pages/parent/ParentDashboard";
 import ComingSoon from "./pages/placeholder/ComingSoon";
 
@@ -36,6 +37,7 @@ export default function App() {
           path="/student/classroom/:classId"
           element={<StudentRoute><ClassroomDetail /></StudentRoute>}
         />
+        <Route path="/student/performance" element={<StudentRoute><StudentPerformance /></StudentRoute>} />
 
         {/* Parent portal */}
         <Route

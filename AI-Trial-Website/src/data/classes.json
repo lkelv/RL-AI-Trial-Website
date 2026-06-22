@@ -1,0 +1,240 @@
+[
+  {
+    "id": "mm34-a",
+    "name": "Maths Methods 3 & 4",
+    "section": "Group A · 2026",
+    "subjectId": "MM34",
+    "room": "Online · Tue 4:30pm",
+    "themeColor": "mint",
+    "bannerPattern": "grid",
+    "teacherName": "David Tran",
+    "upcomingCount": 2,
+    "announcements": [
+      {
+        "id": "mm-a1",
+        "authorName": "David Tran",
+        "authorRole": "teacher",
+        "authorColor": "amber",
+        "postedAt": "Today · 8:05am",
+        "pinned": true,
+        "body": "Welcome to Term 2! This term we finish Differentiation and move into Integration. Please complete the Differentiation diagnostic before Tuesday so I can tailor the next sessions.",
+        "attachment": { "name": "Term2-Overview.pdf", "kind": "pdf" }
+      },
+      {
+        "id": "mm-a2",
+        "authorName": "David Tran",
+        "authorRole": "teacher",
+        "authorColor": "amber",
+        "postedAt": "Yesterday · 6:12pm",
+        "body": "Reminder: tomorrow we cover the Chain Rule and Tangent/Normal problems. Bring your Exam 1 booklet — we'll do timed short-answer practice."
+      },
+      {
+        "id": "mm-a3",
+        "authorName": "Sophie Reyes",
+        "authorRole": "admin",
+        "authorColor": "pine",
+        "postedAt": "Mon · 9:30am",
+        "body": "Topic test for Differentiation is scheduled for next Tuesday (Week 4). It will be a 45-minute Exam 1 style paper."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "mm-t1",
+        "title": "Differentiation diagnostic (Exam 1)",
+        "detail": "6 short-answer questions — first principles, chain & product rule.",
+        "dueLabel": "Due Tue, 4:30pm",
+        "status": "assigned",
+        "points": 30
+      },
+      {
+        "id": "mm-t2",
+        "title": "Worksheet 4B — Tangent & Normal",
+        "detail": "Q1–Q9, show full working.",
+        "dueLabel": "Due Thu",
+        "status": "submitted",
+        "points": 20
+      },
+      {
+        "id": "mm-t3",
+        "title": "Stationary Points investigation",
+        "dueLabel": "Returned",
+        "status": "graded",
+        "points": 25,
+        "grade": "23 / 25"
+      },
+      {
+        "id": "mm-t4",
+        "title": "Chapter 3 review — Circular Functions",
+        "dueLabel": "Was due last Fri",
+        "status": "missing",
+        "points": 20
+      }
+    ],
+    "files": [
+      { "id": "mm-f1", "name": "Term2-Overview.pdf", "kind": "pdf", "meta": "PDF · 240 KB" },
+      { "id": "mm-f2", "name": "Differentiation — Formula Sheet.pdf", "kind": "pdf", "meta": "PDF · 180 KB" },
+      { "id": "mm-f3", "name": "Chain Rule — worked examples.slides", "kind": "slides", "meta": "24 slides" },
+      { "id": "mm-f4", "name": "Exam 1 booklet (2023 VCAA).pdf", "kind": "pdf", "meta": "PDF · 1.2 MB" },
+      { "id": "mm-f5", "name": "Desmos — gradient explorer", "kind": "link", "meta": "External link" }
+    ],
+    "people": [
+      { "id": "p-dt", "name": "David Tran", "role": "teacher", "avatarColor": "amber", "email": "david@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-s2", "name": "Marcus Lee", "role": "student", "avatarColor": "info" },
+      { "id": "p-s3", "name": "Priya Patel", "role": "student", "avatarColor": "pine" },
+      { "id": "p-s4", "name": "Ethan Wright", "role": "student", "avatarColor": "amber" },
+      { "id": "p-s5", "name": "Sofia Russo", "role": "student", "avatarColor": "mint" },
+      { "id": "p-s6", "name": "Daniel Kim", "role": "student", "avatarColor": "info" }
+    ]
+  },
+  {
+    "id": "sm34-b",
+    "name": "Specialist Maths 3 & 4",
+    "section": "Group B · 2026",
+    "subjectId": "SM34",
+    "room": "Online · Thu 5:30pm",
+    "themeColor": "amber",
+    "bannerPattern": "waves",
+    "teacherName": "David Tran",
+    "upcomingCount": 1,
+    "announcements": [
+      {
+        "id": "sm-a1",
+        "authorName": "David Tran",
+        "authorRole": "teacher",
+        "authorColor": "amber",
+        "postedAt": "Today · 7:40am",
+        "pinned": true,
+        "body": "Complex numbers SAC practice is up. Focus on De Moivre's theorem and regions in the Argand plane."
+      },
+      {
+        "id": "sm-a2",
+        "authorName": "David Tran",
+        "authorRole": "teacher",
+        "authorColor": "amber",
+        "postedAt": "Wed · 5:01pm",
+        "body": "Great work on vectors last week — class average was 84%. Solutions are now in Files."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "sm-t1",
+        "title": "Complex Numbers — SAC practice",
+        "detail": "De Moivre's theorem, polar form, loci.",
+        "dueLabel": "Due Thu",
+        "status": "assigned",
+        "points": 40
+      },
+      {
+        "id": "sm-t2",
+        "title": "Vectors problem set",
+        "dueLabel": "Returned",
+        "status": "graded",
+        "points": 30,
+        "grade": "28 / 30"
+      },
+      {
+        "id": "sm-t3",
+        "title": "Mechanics — projectile worksheet",
+        "dueLabel": "Due next week",
+        "status": "assigned",
+        "points": 25
+      }
+    ],
+    "files": [
+      { "id": "sm-f1", "name": "Complex Numbers — notes.pdf", "kind": "pdf", "meta": "PDF · 320 KB" },
+      { "id": "sm-f2", "name": "Vectors SAC — solutions.pdf", "kind": "pdf", "meta": "PDF · 410 KB" },
+      { "id": "sm-f3", "name": "Argand plane regions.slides", "kind": "slides", "meta": "18 slides" }
+    ],
+    "people": [
+      { "id": "p-dt", "name": "David Tran", "role": "teacher", "avatarColor": "amber", "email": "david@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-s7", "name": "Hannah Cole", "role": "student", "avatarColor": "pine" },
+      { "id": "p-s8", "name": "Liam Foster", "role": "student", "avatarColor": "info" },
+      { "id": "p-s9", "name": "Olivia Tran", "role": "student", "avatarColor": "amber" }
+    ]
+  },
+  {
+    "id": "ibhl-aa",
+    "name": "IB Mathematics AA HL",
+    "section": "Year 12 · 2026",
+    "subjectId": "IB12HL",
+    "room": "Online · Sat 10:00am",
+    "themeColor": "info",
+    "bannerPattern": "rings",
+    "teacherName": "Priya Sharma",
+    "upcomingCount": 3,
+    "announcements": [
+      {
+        "id": "ib-a1",
+        "authorName": "Priya Sharma",
+        "authorRole": "teacher",
+        "authorColor": "info",
+        "postedAt": "Today · 9:15am",
+        "pinned": true,
+        "body": "Paper 3 investigation drafts are due Saturday. Remember to use the Tech Active approach and document your GDC steps."
+      },
+      {
+        "id": "ib-a2",
+        "authorName": "Priya Sharma",
+        "authorRole": "teacher",
+        "authorColor": "info",
+        "postedAt": "Fri · 2:20pm",
+        "body": "This week: Maclaurin series and integration by parts. Tech-Free drill attached."
+      },
+      {
+        "id": "ib-a3",
+        "authorName": "Sophie Reyes",
+        "authorRole": "admin",
+        "authorColor": "pine",
+        "postedAt": "Thu · 11:00am",
+        "body": "Mock exams (Paper 1 & 2) begin in three weeks. The timetable will be shared shortly."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "ib-t1",
+        "title": "Paper 3 investigation — draft",
+        "detail": "Tech Active. 1200–1500 words with GDC evidence.",
+        "dueLabel": "Due Sat, 10:00am",
+        "status": "assigned",
+        "points": 50
+      },
+      {
+        "id": "ib-t2",
+        "title": "Maclaurin series — Tech Free drill",
+        "dueLabel": "Due Mon",
+        "status": "assigned",
+        "points": 20
+      },
+      {
+        "id": "ib-t3",
+        "title": "Integration by parts set",
+        "dueLabel": "Submitted",
+        "status": "submitted",
+        "points": 25
+      },
+      {
+        "id": "ib-t4",
+        "title": "Vectors — lines & planes test",
+        "dueLabel": "Returned",
+        "status": "graded",
+        "points": 40,
+        "grade": "36 / 40"
+      }
+    ],
+    "files": [
+      { "id": "ib-f1", "name": "Paper 3 — investigation brief.pdf", "kind": "pdf", "meta": "PDF · 290 KB" },
+      { "id": "ib-f2", "name": "Maclaurin series — Tech Free drill.pdf", "kind": "pdf", "meta": "PDF · 150 KB" },
+      { "id": "ib-f3", "name": "Formula booklet (IB AA HL).pdf", "kind": "pdf", "meta": "PDF · 2.1 MB" },
+      { "id": "ib-f4", "name": "GDC walkthrough.video", "kind": "video", "meta": "12 min" }
+    ],
+    "people": [
+      { "id": "p-ps", "name": "Priya Sharma", "role": "teacher", "avatarColor": "info", "email": "priya@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-s10", "name": "Noah Bennett", "role": "student", "avatarColor": "amber" },
+      { "id": "p-s11", "name": "Mia Zhang", "role": "student", "avatarColor": "pine" },
+      { "id": "p-s12", "name": "Lucas Romano", "role": "student", "avatarColor": "mint" }
+    ]
+  }
+]

@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# RL Black Magic — AI Tutoring (Demo)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **front-end-only demo** of the RL Black Magic tutoring platform, built for a live
+demonstration video. Every "AI" feature is **faked** — there is no backend and no
+real AI. All data lives in JSON/TS files under `src/data`, and the AI flows play a
+scripted loading animation then reveal **pre-made** outcomes.
 
-Currently, two official plugins are available:
+Tech: **React 19 · TypeScript · Vite · Tailwind CSS v4** (dark, scholarly theme —
+slate `#202830` with mint `#74be9c` & amber `#f4a52e` accents; Fraunces / Hanken
+Grotesk / IBM Plex Mono fonts).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev        # http://localhost:5173
+# for the recording, prefer the production build (smoother, no StrictMode double-render):
+npm run build && npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Demo accounts (password is `demo` for all)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Role    | Username | One-click on the login screen |
+|---------|----------|-------------------------------|
+| Student | `aisha`  | "Aisha Nguyen"                |
+| Parent  | `linh`   | "Linh Nguyen"                 |
+| Teacher | `david`  | (lands on a "coming soon" page) |
+| Admin   | `admin`  | (lands on a "coming soon" page) |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The front page has four portals — **Students** and **Parents** are fully built;
+**Teacher** and **Admin** are tasteful "in development" placeholders.
+
+## What's built
+
+- **Student → AI Features**
+  - **Practice** — a 6-step wizard (subject → topic → difficulty → type →
+    questions → VCAA/modified split) that "generates" two PDFs.
+  - **AI Marking Paper** — upload any PDF → returns a pre-made marked PDF + score.
+  - **Ask AI Question** — a scripted chat tutor with worked, step-by-step answers.
+- **Student → Classroom** — Google-Classroom-style class list + per-class
+  Stream / Tasks / Files / People.
+- **Parent dashboard** — 5 stat tiles, a dual-line progress chart, and a
+  scrolling announcements log, all on one no-scroll screen.
+
+## Scripted demo flow (Practice)
+
+This is the exact happy path to follow on camera:
+
+1. **Subject:** Maths Methods — Units 3 & 4 (MM34)
+2. **Topic:** Differentiation
+3. **Difficulty:** Normal
+4. **Type:** Exam 1
+5. **Questions:** 6
+6. **Source:** 3 VCAA + 3 modified → **Generate papers**
+
+(The wizard defaults to 6 questions / 3+3, so steps 5–6 just need a confirming click.)
+
+## Swapping the pre-made PDFs
+
+The demo serves three PDFs from `public/pdfs/`:
+
+- `practice-questions.pdf` and `practice-solutions.pdf` — shown after Practice.
+- `ai-marked-sample.pdf` — shown after AI Marking.
+
+Replace these files with real RL papers (keep the same filenames) and they'll appear
+automatically. The current placeholders are generated by `scripts/generate_pdfs.py`
+(`pip install reportlab` then `python3 scripts/generate_pdfs.py`).
+
+## Notes
+
+- No backend, no network calls, no real AI — safe to run offline for the recording.
+- Output regardless of input is deterministic, so the demo can't "go wrong" on camera.
+- Record in **Chrome** for the most reliable inline PDF preview; each PDF viewer also
+  has **Open** and **Download** buttons as a fallback.

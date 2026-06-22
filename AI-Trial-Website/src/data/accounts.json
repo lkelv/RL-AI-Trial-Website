@@ -1,0 +1,40 @@
+[
+  {
+    "id": "u-student-1",
+    "username": "aisha",
+    "password": "demo",
+    "role": "student",
+    "displayName": "Aisha Nguyen",
+    "avatarColor": "mint",
+    "tagline": "Year 12 · Methods & Specialist",
+    "enrolledClassIds": ["mm34-a", "sm34-b", "ibhl-aa"]
+  },
+  {
+    "id": "u-parent-1",
+    "username": "linh",
+    "password": "demo",
+    "role": "parent",
+    "displayName": "Linh Nguyen",
+    "avatarColor": "info",
+    "tagline": "Parent of Aisha Nguyen",
+    "childStudentName": "Aisha Nguyen"
+  },
+  {
+    "id": "u-teacher-1",
+    "username": "david",
+    "password": "demo",
+    "role": "teacher",
+    "displayName": "David Tran",
+    "avatarColor": "amber",
+    "tagline": "Mathematics tutor"
+  },
+  {
+    "id": "u-admin-1",
+    "username": "admin",
+    "password": "demo",
+    "role": "admin",
+    "displayName": "Sophie Reyes",
+    "avatarColor": "pine",
+    "tagline": "RL operations"
+  }
+]

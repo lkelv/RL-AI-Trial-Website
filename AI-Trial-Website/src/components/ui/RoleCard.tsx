@@ -29,19 +29,15 @@ export function RoleCard({
   return (
     <Link
       to={to}
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border bg-raised/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-raised/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 ${
         comingSoon ? "border-line/60 opacity-80 hover:opacity-100" : "border-line/70"
       }`}
       style={{ ["--rc" as string]: ACCENT_COLOR[accent] }}
     >
-      {/* hover glow */}
+      {/* top accent rule */}
       <div
-        className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+        className="absolute inset-x-0 top-0 h-px opacity-50"
         style={{ background: ACCENT_COLOR[accent] }}
-      />
-      <div
-        className="absolute inset-x-0 top-0 h-px opacity-60"
-        style={{ background: `linear-gradient(90deg, transparent, ${ACCENT_COLOR[accent]}, transparent)` }}
       />
 
       <span
@@ -72,7 +68,7 @@ export function RoleCard({
 
       <p className="relative mt-2 text-sm leading-relaxed text-ink-dim">{description}</p>
 
-      <div className="relative mt-6 flex items-center gap-2 text-sm font-semibold" style={{ color: ACCENT_COLOR[accent] }}>
+      <div className="relative mt-auto pt-6 flex items-center gap-2 text-sm font-semibold" style={{ color: ACCENT_COLOR[accent] }}>
         <span>{comingSoon ? "Preview" : cta}</span>
         <IconArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
       </div>

@@ -43,7 +43,7 @@ export function FakeAiOverlay({
           <div
             className="absolute inset-0 rounded-full"
             style={{
-              background: "radial-gradient(circle, var(--color-mint), transparent 70%)",
+              background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
               animation: "rl-pulse-glow 1.6s ease-in-out infinite",
             }}
           />
@@ -61,7 +61,7 @@ export function FakeAiOverlay({
 
         <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-raised">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-mint to-amber transition-[width] duration-500 ease-out"
+            className="h-full rounded-full bg-mint transition-[width] duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>

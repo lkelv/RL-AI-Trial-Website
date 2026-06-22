@@ -165,17 +165,6 @@
     transform: rotate(360deg);
   }
 }
-@keyframes rl-drift {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(3%, -2%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
 @keyframes rl-bob {
   0%,
   100% {
@@ -185,12 +174,6 @@
     transform: translateY(-3px);
   }
 }
-@keyframes rl-shimmer {
-  to {
-    background-position: 200% 0;
-  }
-}
-
 .rl-reveal {
   opacity: 0;
   animation: rl-reveal-up 0.62s var(--ease-out-soft) forwards;
@@ -204,16 +187,10 @@
   animation: rl-fade 0.8s ease forwards;
 }
 
-/* atmospheric shimmer for skeleton / loading bars */
+/* solid pulse for skeleton / loading bars */
 .rl-shimmer {
-  background: linear-gradient(
-    100deg,
-    transparent 20%,
-    color-mix(in srgb, var(--color-mint) 22%, transparent) 50%,
-    transparent 80%
-  );
-  background-size: 200% 100%;
-  animation: rl-shimmer 1.4s linear infinite;
+  background: color-mix(in srgb, var(--color-mint) 14%, transparent);
+  animation: rl-pulse-glow 1.4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

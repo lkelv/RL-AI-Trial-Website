@@ -8,7 +8,6 @@ import { Avatar } from "../components/ui/Avatar";
 import { Button } from "../components/ui/Button";
 import {
   IconArrowRight,
-  IconCheck,
   IconParent,
   IconSparkles,
   IconStudent,
@@ -74,20 +73,6 @@ export default function Login() {
             One login for everything RL — practice, marking, classrooms and live
             progress.
           </p>
-          <ul className="mt-8 space-y-3">
-            {[
-              "AI-generated VCAA & RL Question Bank practice papers",
-              "Instant AI marking with worked feedback",
-              "Live homework, attendance & obedience tracking",
-            ].map((f) => (
-              <li key={f} className="flex items-center gap-3 text-sm text-ink-dim">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-mint/15 text-mint">
-                  <IconCheck size={14} />
-                </span>
-                {f}
-              </li>
-            ))}
-          </ul>
         </div>
 
         <p className="relative z-10 text-xs text-ink-faint">

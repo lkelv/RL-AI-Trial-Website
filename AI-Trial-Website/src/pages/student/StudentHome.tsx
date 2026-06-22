@@ -16,7 +16,7 @@ export default function StudentHome() {
 
   return (
     <AppShell>
-      <div className="mx-auto w-full max-w-5xl px-6 py-10 sm:py-14">
+      <div className="mx-auto w-full max-w-5xl px-6 py-10 sm:py-14 @container">
         <p
           className="rl-reveal font-mono text-xs uppercase tracking-[0.28em] text-mint"
           style={stagger(0)}
@@ -30,8 +30,8 @@ export default function StudentHome() {
           Jump into a classroom or let the AI tutor do the heavy lifting.
         </p>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          <div className="rl-reveal" style={stagger(3)}>
+        <div className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 @2xl:grid-cols-2">
+          <div className="rl-reveal h-full" style={stagger(3)}>
             <RoleCard
               title="Classroom"
               description="Your enrolled classes — announcements, tasks, materials and classmates, all in one place."
@@ -41,7 +41,7 @@ export default function StudentHome() {
               cta="Open classroom"
             />
           </div>
-          <div className="rl-reveal" style={stagger(4)}>
+          <div className="rl-reveal h-full" style={stagger(4)}>
             <RoleCard
               title="AI Features"
               description="Generate practice papers, get instant AI marking, and ask the AI tutor any question."

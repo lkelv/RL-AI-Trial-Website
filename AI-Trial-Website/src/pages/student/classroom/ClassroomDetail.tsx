@@ -61,7 +61,7 @@ export default function ClassroomDetail() {
         {/* banner */}
         <div
           className="rl-reveal relative overflow-hidden rounded-2xl p-6"
-          style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${c} 48%, var(--color-night)), color-mix(in srgb, ${c} 16%, var(--color-night)))` }}
+          style={{ background: `color-mix(in srgb, ${c} 28%, var(--color-night))` }}
         >
           <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
           <div className="relative">

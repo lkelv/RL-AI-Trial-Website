@@ -50,7 +50,7 @@ export default function Landing() {
       </header>
 
       <main className="flex flex-1 flex-col justify-center px-6 py-8 sm:px-10">
-        <div className="mx-auto w-full max-w-6xl">
+        <div className="mx-auto w-full max-w-6xl @container">
           <p
             className="rl-reveal font-mono text-xs uppercase tracking-[0.32em] text-mint"
             style={stagger(0)}
@@ -80,9 +80,9 @@ export default function Landing() {
             Choose your portal
           </p>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid auto-rows-fr grid-cols-2 gap-4 @4xl:grid-cols-4">
             {ROLES.map((role, i) => (
-              <div key={role.title} className="rl-reveal" style={stagger(4 + i)}>
+              <div key={role.title} className="rl-reveal h-full" style={stagger(4 + i)}>
                 <RoleCard {...role} />
               </div>
             ))}

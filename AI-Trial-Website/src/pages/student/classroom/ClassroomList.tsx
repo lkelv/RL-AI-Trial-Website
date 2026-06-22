@@ -13,12 +13,12 @@ function ClassCard({ cls }: { cls: ClassRoom }) {
   return (
     <Link
       to={`/student/classroom/${cls.id}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-line/70 bg-raised/45 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line/70 bg-raised/45 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40"
     >
       {/* banner */}
       <div
         className="relative h-28 overflow-hidden p-4"
-        style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${c} 48%, var(--color-night)), color-mix(in srgb, ${c} 18%, var(--color-night)))` }}
+        style={{ background: `color-mix(in srgb, ${c} 28%, var(--color-night))` }}
       >
         <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
         <div className="relative">
@@ -57,7 +57,7 @@ export default function ClassroomList() {
 
   return (
     <AppShell back={{ to: "/student", label: "Student home" }}>
-      <div className="mx-auto w-full max-w-5xl px-6 py-10">
+      <div className="mx-auto w-full max-w-5xl px-6 py-10 @container">
         <div className="rl-reveal flex items-center gap-3" style={stagger(0)}>
           <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-info/15 text-info">
             <IconClassroom size={24} />
@@ -70,9 +70,9 @@ export default function ClassroomList() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid auto-rows-fr grid-cols-2 gap-5 @3xl:grid-cols-3">
           {myClasses.map((cls, i) => (
-            <div key={cls.id} className="rl-reveal" style={stagger(i + 1)}>
+            <div key={cls.id} className="rl-reveal h-full" style={stagger(i + 1)}>
               <ClassCard cls={cls} />
             </div>
           ))}

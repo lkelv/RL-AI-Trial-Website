@@ -34,7 +34,7 @@ export const SOURCE_LABELS = {
     blurb: "Authentic past exam questions sourced directly from VCAA papers.",
   },
   modified: {
-    title: "Modified",
-    blurb: "VCAA-style questions reworked by RL with fresh numbers & contexts.",
+    title: "RL Question Bank",
+    blurb: "Exam-style questions written and curated by RL tutors.",
   },
 };

@@ -58,7 +58,7 @@ export default function Landing() {
             className="rl-reveal font-mono text-xs uppercase tracking-[0.32em] text-mint"
             style={stagger(0)}
           >
-            RL Black Magic · AI Tutoring Platform
+            RL Education · AI Tutoring Platform
           </p>
           <h1
             className="rl-reveal mt-4 max-w-3xl text-balance text-5xl leading-[1.02] text-ink sm:text-6xl"

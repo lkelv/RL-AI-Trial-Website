@@ -76,7 +76,7 @@ export default function Login() {
           </p>
           <ul className="mt-8 space-y-3">
             {[
-              "AI-generated VCAA & modified practice papers",
+              "AI-generated VCAA & RL Question Bank practice papers",
               "Instant AI marking with worked feedback",
               "Live homework, attendance & obedience tracking",
             ].map((f) => (

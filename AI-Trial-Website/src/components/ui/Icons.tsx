@@ -110,6 +110,12 @@ export const IconShield = (p: IconProps) => (
     <path d="M12 2.5 4 6v5.5c0 4.5 3.2 8 8 9.5 4.8-1.5 8-5 8-9.5V6l-8-3.5Z" />
   </Base>
 );
+export const IconChart = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M3.5 20h17" />
+    <path d="M7 20v-5M11 20v-9M15 20v-4M19 20v-12" />
+  </Base>
+);
 
 /* ---- file kinds ---- */
 export const IconFile = (p: IconProps) => (

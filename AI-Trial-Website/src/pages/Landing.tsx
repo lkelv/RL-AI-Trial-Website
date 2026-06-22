@@ -19,7 +19,7 @@ const ROLES = [
   },
   {
     title: "Parents",
-    description: "Track your child's scores, attendance and progress at a glance, with live updates from the RL team.",
+    description: "Track your child's scores, attendance and progress with live updates from the RL team.",
     icon: <IconParent size={28} />,
     to: "/login?role=parent",
     accent: "info" as const,
@@ -47,9 +47,6 @@ export default function Landing() {
     <div className="relative flex min-h-[100dvh] flex-col">
       <header className="flex items-center justify-between px-6 py-5 sm:px-10">
         <Logo />
-        <Badge color="mint" dot className="rl-fade-in">
-          Live demo
-        </Badge>
       </header>
 
       <main className="flex flex-1 flex-col justify-center px-6 py-8 sm:px-10">
@@ -58,7 +55,7 @@ export default function Landing() {
             className="rl-reveal font-mono text-xs uppercase tracking-[0.32em] text-mint"
             style={stagger(0)}
           >
-            RL Education · AI Tutoring Platform
+            RL Education · Tutoring Platform
           </p>
           <h1
             className="rl-reveal mt-4 max-w-3xl text-balance text-5xl leading-[1.02] text-ink sm:text-6xl"
@@ -92,10 +89,6 @@ export default function Landing() {
           </div>
         </div>
       </main>
-
-      <footer className="px-6 py-6 text-center text-xs text-ink-faint sm:px-10">
-        Demonstration build · All students, scores and data shown are illustrative.
-      </footer>
     </div>
   );
 }

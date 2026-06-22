@@ -107,7 +107,7 @@ export default function Login() {
           <div className="rl-reveal" style={{ animationDelay: "40ms" }}>
             <h1 className="font-display text-3xl text-ink">Welcome back</h1>
             <p className="mt-2 text-sm text-ink-dim">
-              Pick a demo account to jump straight in — no password needed.
+              Pick an account to jump straight into learning with RL
             </p>
           </div>
 
@@ -195,11 +195,6 @@ export default function Login() {
               <IconSparkles size={17} /> Sign in
             </Button>
           </form>
-
-          <p className="mt-6 text-center text-xs text-ink-faint">
-            Demo credentials — every account uses the password{" "}
-            <span className="font-mono text-ink-dim">demo</span>.
-          </p>
         </div>
       </div>
     </div>

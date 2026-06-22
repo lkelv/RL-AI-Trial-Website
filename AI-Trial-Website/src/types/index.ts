@@ -31,6 +31,7 @@ export type SubjectFamily = "VCE" | "IB";
 export interface SubjectTopic {
   overall: string; // e.g. "Differentiation"
   subs: string[]; // e.g. ["Chain Rule", "Product Rule", ...]
+  unit?: number; // e.g. 3 or 4 — drives the "All Unit N topics" presets
 }
 
 export interface Subject {
@@ -58,11 +59,20 @@ export interface OptionItem<T extends string = string> {
   hint?: string;
 }
 
+export interface DifficultyMix {
+  id: Difficulty;
+  percent: number;
+}
+
+export interface TopicSelection {
+  overall: string;
+  subs: string[]; // empty = the whole topic (all sub-topics)
+}
+
 export interface PracticeSelection {
   subjectId: string | null;
-  overallTopic: string | null;
-  subTopic: string | null;
-  difficulty: Difficulty | null;
+  topics: TopicSelection[]; // multi-select; each topic may carry chosen sub-topics
+  difficulties: DifficultyMix[]; // selected levels + their % split (sums to 100)
   paperType: PaperType | null;
   questionCount: number;
   vcaaCount: number;

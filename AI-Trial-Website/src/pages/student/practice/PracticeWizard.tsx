@@ -1,5 +1,10 @@
 import { useReducer } from "react";
-import type { Difficulty, PaperType, PracticeSelection } from "../../../types";
+import type {
+  Difficulty,
+  DifficultyMix,
+  PaperType,
+  PracticeSelection,
+} from "../../../types";
 import {
   DIFFICULTIES,
   PAPER_TYPES_BY_FAMILY,
@@ -11,7 +16,6 @@ import {
 import { AppShell } from "../../../components/layout/AppShell";
 import { StepIndicator } from "../../../components/ui/StepIndicator";
 import { OptionTile } from "../../../components/ui/OptionTile";
-import { Select } from "../../../components/ui/Select";
 import { Button } from "../../../components/ui/Button";
 import { Badge } from "../../../components/ui/Badge";
 import { FakeAiOverlay } from "../../../components/feedback/FakeAiOverlay";
@@ -22,23 +26,69 @@ import {
   IconSparkles,
 } from "../../../components/ui/Icons";
 import { PracticeResult } from "./PracticeResult";
+import { TopicMultiSelect } from "./TopicMultiSelect";
 
 const STEPS = [
   { label: "Subject", title: "Choose your subject", desc: "Which course are you practising for?" },
-  { label: "Topic", title: "Pick a topic", desc: "Select an overall topic, then narrow to a sub-topic." },
-  { label: "Difficulty", title: "Set the difficulty", desc: "How challenging should the questions be?" },
+  { label: "Topics", title: "Pick your topics", desc: "Choose one or more topics — or grab a whole unit at once." },
+  { label: "Difficulty", title: "Set the difficulty", desc: "Select one or more levels. We'll split the paper by the percentages you choose." },
   { label: "Type", title: "Paper type", desc: "What kind of paper do you want to generate?" },
   { label: "Questions", title: "How many questions?", desc: "Choose how long your paper should be." },
   { label: "Source", title: "Where from?", desc: "Split your paper between authentic VCAA and RL-modified questions." },
 ];
 
 const GEN_PHASES = [
-  "Analysing topic & difficulty",
+  "Analysing topics & difficulty",
   "Selecting VCAA questions",
   "Generating modified questions",
   "Compiling worked solutions",
   "Finalising your papers",
 ];
+
+const DIFF_COLOR: Record<Difficulty, string> = {
+  easy: "var(--color-mint)",
+  normal: "var(--color-info)",
+  intermediate: "var(--color-amber)",
+  challenging: "var(--color-danger)",
+};
+const DIFF_LABEL: Record<Difficulty, string> = {
+  easy: "Easy",
+  normal: "Normal",
+  intermediate: "Intermediate",
+  challenging: "Challenging",
+};
+
+/* ---- difficulty-mix helpers (percentages always sum to 100) ---- */
+function evenSplit(ids: Difficulty[]): DifficultyMix[] {
+  const n = ids.length;
+  if (n === 0) return [];
+  const base = Math.floor(100 / n);
+  const rem = 100 - base * n;
+  return ids.map((id, i) => ({ id, percent: base + (i < rem ? 1 : 0) }));
+}
+function toggleDifficulty(current: DifficultyMix[], id: Difficulty): DifficultyMix[] {
+  const has = current.some((d) => d.id === id);
+  const ids = has
+    ? current.filter((d) => d.id !== id).map((d) => d.id)
+    : [...current.map((d) => d.id), id];
+  const ordered = DIFFICULTIES.map((d) => d.id).filter((x) => ids.includes(x));
+  return evenSplit(ordered);
+}
+function setPercent(current: DifficultyMix[], id: Difficulty, value: number): DifficultyMix[] {
+  const v = Math.max(0, Math.min(100, value));
+  const others = current.filter((d) => d.id !== id);
+  if (others.length === 0) return [{ id, percent: 100 }];
+  const remaining = 100 - v;
+  const base = Math.floor(remaining / others.length);
+  const rem = remaining - base * others.length;
+  let oi = 0;
+  return current.map((d) => {
+    if (d.id === id) return { id, percent: v };
+    const p = base + (oi < rem ? 1 : 0);
+    oi += 1;
+    return { id: d.id, percent: p };
+  });
+}
 
 type Phase = "wizard" | "generating" | "result";
 interface State extends PracticeSelection {
@@ -59,9 +109,8 @@ const INITIAL: State = {
   step: 1,
   phase: "wizard",
   subjectId: null,
-  overallTopic: null,
-  subTopic: null,
-  difficulty: null,
+  topics: [],
+  difficulties: [],
   paperType: null,
   questionCount: 6,
   vcaaCount: 3,
@@ -94,21 +143,36 @@ function Stepper({
   onChange,
   min = 0,
   max = 20,
+  step = 1,
+  suffix = "",
+  compact = false,
 }: {
   value: number;
   onChange: (v: number) => void;
   min?: number;
   max?: number;
+  step?: number;
+  suffix?: string;
+  compact?: boolean;
 }) {
   const btn =
     "flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-base/60 text-ink transition-colors hover:border-mint/50 hover:text-mint disabled:cursor-not-allowed disabled:opacity-30";
   return (
     <div className="inline-flex items-center gap-3">
-      <button type="button" className={btn} onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min}>
+      <button type="button" className={btn} onClick={() => onChange(Math.max(min, value - step))} disabled={value <= min}>
         <IconMinus size={16} />
       </button>
-      <span className="w-12 text-center font-mono text-2xl font-semibold text-ink">{value}</span>
-      <button type="button" className={btn} onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max}>
+      <span
+        className={
+          compact
+            ? "w-14 text-center font-mono text-base font-semibold text-ink"
+            : "w-14 text-center font-mono text-2xl font-semibold text-ink"
+        }
+      >
+        {value}
+        {suffix}
+      </span>
+      <button type="button" className={btn} onClick={() => onChange(Math.min(max, value + step))} disabled={value >= max}>
         <IconPlus size={16} />
       </button>
     </div>
@@ -120,18 +184,17 @@ export default function PracticeWizard() {
 
   const subject = getSubject(s.subjectId);
   const topics = subject?.topics ?? [];
-  const currentOverall = topics.find((t) => t.overall === s.overallTopic);
-  const subs = currentOverall?.subs ?? [];
   const paperTypes = subject ? PAPER_TYPES_BY_FAMILY[subject.family] : [];
+  const single = s.difficulties.length === 1;
 
   const canProceed = (() => {
     switch (s.step) {
       case 1:
         return !!s.subjectId;
       case 2:
-        return !!s.overallTopic;
+        return s.topics.length >= 1;
       case 3:
-        return !!s.difficulty;
+        return s.difficulties.length >= 1;
       case 4:
         return !!s.paperType;
       case 5:
@@ -199,7 +262,7 @@ export default function PracticeWizard() {
                       onClick={() =>
                         dispatch({
                           type: "patch",
-                          patch: { subjectId: subj.id, overallTopic: null, subTopic: null, paperType: null },
+                          patch: { subjectId: subj.id, topics: [], paperType: null },
                         })
                       }
                       title={subj.label}
@@ -210,71 +273,91 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 2 — Topic */}
+              {/* STEP 2 — Topics (multi-select) */}
               {s.step === 2 && (
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Select
-                    label="Overall topic"
-                    value={s.overallTopic ?? ""}
-                    onChange={(e) =>
-                      dispatch({
-                        type: "patch",
-                        patch: {
-                          overallTopic: e.target.value || null,
-                          subTopic: e.target.value ? "All sub-topics" : null,
-                        },
-                      })
-                    }
-                  >
-                    <option value="">Select a topic…</option>
-                    {topics.map((t) => (
-                      <option key={t.overall} value={t.overall}>
-                        {t.overall}
-                      </option>
-                    ))}
-                  </Select>
-
-                  <Select
-                    label="Sub-topic"
-                    value={s.subTopic ?? ""}
-                    disabled={!s.overallTopic || subs.length === 0}
-                    onChange={(e) => dispatch({ type: "patch", patch: { subTopic: e.target.value } })}
-                  >
-                    {subs.length === 0 ? (
-                      <option value="All sub-topics">All sub-topics</option>
-                    ) : (
-                      <>
-                        <option value="All sub-topics">All sub-topics</option>
-                        {subs.map((sub) => (
-                          <option key={sub} value={sub}>
-                            {sub}
-                          </option>
-                        ))}
-                      </>
-                    )}
-                  </Select>
-
-                  {s.overallTopic && (
-                    <p className="text-xs text-ink-faint sm:col-span-2">
-                      {subs.length} sub-topics available in{" "}
-                      <span className="text-ink-dim">{s.overallTopic}</span>.
-                    </p>
-                  )}
+                <div>
+                  <TopicMultiSelect
+                    topics={topics}
+                    selected={s.topics}
+                    onChange={(next) => dispatch({ type: "patch", patch: { topics: next } })}
+                  />
+                  <p className="mt-3 text-xs text-ink-faint">
+                    Tip: use “All Unit 3 topics”, “All Unit 4 topics” or “All topics” to select a whole set at once.
+                  </p>
                 </div>
               )}
 
-              {/* STEP 3 — Difficulty */}
+              {/* STEP 3 — Difficulty (multi-select + % mix) */}
               {s.step === 3 && (
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {DIFFICULTIES.map((d) => (
-                    <OptionTile
-                      key={d.id}
-                      selected={s.difficulty === d.id}
-                      onClick={() => dispatch({ type: "patch", patch: { difficulty: d.id as Difficulty } })}
-                      title={d.label}
-                      hint={d.hint}
-                    />
-                  ))}
+                <div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {DIFFICULTIES.map((d) => (
+                      <OptionTile
+                        key={d.id}
+                        selected={s.difficulties.some((x) => x.id === d.id)}
+                        onClick={() =>
+                          dispatch({ type: "patch", patch: { difficulties: toggleDifficulty(s.difficulties, d.id) } })
+                        }
+                        title={d.label}
+                        hint={d.hint}
+                      />
+                    ))}
+                  </div>
+
+                  {s.difficulties.length > 0 && (
+                    <div className="mt-6 rounded-xl border border-line/70 bg-base/50 p-4">
+                      <div className="mb-3 flex items-center justify-between">
+                        <span className="text-sm font-medium text-ink">
+                          Difficulty mix {single && <span className="text-ink-faint">· 100%</span>}
+                        </span>
+                        {!single && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              dispatch({
+                                type: "patch",
+                                patch: { difficulties: evenSplit(s.difficulties.map((d) => d.id)) },
+                              })
+                            }
+                            className="text-xs font-medium text-mint transition-opacity hover:opacity-80"
+                          >
+                            Reset to even split
+                          </button>
+                        )}
+                      </div>
+
+                      {/* segmented bar */}
+                      <div className="mb-4 flex h-2.5 w-full overflow-hidden rounded-full bg-base">
+                        {s.difficulties.map((d) => (
+                          <div
+                            key={d.id}
+                            style={{ width: `${d.percent}%`, background: DIFF_COLOR[d.id] }}
+                            className="h-full transition-[width] duration-300"
+                          />
+                        ))}
+                      </div>
+
+                      <div className="space-y-2">
+                        {s.difficulties.map((d) => (
+                          <div key={d.id} className="flex items-center gap-3">
+                            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: DIFF_COLOR[d.id] }} />
+                            <span className="flex-1 text-sm text-ink">{DIFF_LABEL[d.id]}</span>
+                            <Stepper
+                              value={d.percent}
+                              min={0}
+                              max={100}
+                              step={5}
+                              suffix="%"
+                              compact
+                              onChange={(v) =>
+                                dispatch({ type: "patch", patch: { difficulties: setPercent(s.difficulties, d.id, v) } })
+                              }
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -331,10 +414,7 @@ export default function PracticeWizard() {
                         min={0}
                         max={s.questionCount}
                         onChange={(v) =>
-                          dispatch({
-                            type: "patch",
-                            patch: { vcaaCount: v, modifiedCount: s.questionCount - v },
-                          })
+                          dispatch({ type: "patch", patch: { vcaaCount: v, modifiedCount: s.questionCount - v } })
                         }
                       />
                     </div>
@@ -346,10 +426,7 @@ export default function PracticeWizard() {
                         min={0}
                         max={s.questionCount}
                         onChange={(m) =>
-                          dispatch({
-                            type: "patch",
-                            patch: { modifiedCount: m, vcaaCount: s.questionCount - m },
-                          })
+                          dispatch({ type: "patch", patch: { modifiedCount: m, vcaaCount: s.questionCount - m } })
                         }
                       />
                     </div>

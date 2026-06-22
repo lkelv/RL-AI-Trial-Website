@@ -5,23 +5,40 @@ import { Button } from "../../../components/ui/Button";
 import { Badge } from "../../../components/ui/Badge";
 import { IconCheck, IconSparkles } from "../../../components/ui/Icons";
 
+function diffLabel(id: string): string {
+  return DIFFICULTIES.find((d) => d.id === id)?.label ?? id;
+}
+
 function summaryChips(s: PracticeSelection): string[] {
   const subject = getSubject(s.subjectId);
-  const difficulty = DIFFICULTIES.find((d) => d.id === s.difficulty)?.label;
   const family = subject?.family ?? "VCE";
   const paper = PAPER_TYPES_BY_FAMILY[family].find((t) => t.id === s.paperType)?.label;
-  const topic =
-    s.overallTopic && s.subTopic && s.subTopic !== "All sub-topics"
-      ? `${s.overallTopic} · ${s.subTopic}`
-      : (s.overallTopic ?? "");
-  return [
-    subject?.short ?? "",
-    topic,
-    difficulty ?? "",
-    paper ?? "",
-    `${s.questionCount} questions`,
-    `${s.vcaaCount} VCAA · ${s.modifiedCount} modified`,
-  ].filter(Boolean);
+
+  const allNames = subject?.topics.map((t) => t.overall) ?? [];
+  const allFull =
+    allNames.length > 0 &&
+    s.topics.length === allNames.length &&
+    s.topics.every((t) => t.subs.length === 0);
+  const topicLabel = (t: (typeof s.topics)[number]) =>
+    t.subs.length === 0 ? t.overall : `${t.overall} (${t.subs.length})`;
+  let topicChip = "";
+  if (s.topics.length === 0) topicChip = "";
+  else if (allFull) topicChip = "All topics";
+  else if (s.topics.length <= 2) topicChip = s.topics.map(topicLabel).join(", ");
+  else topicChip = `${s.topics.length} topics`;
+
+  const chips: string[] = [];
+  if (subject?.short) chips.push(subject.short);
+  if (topicChip) chips.push(topicChip);
+  if (s.difficulties.length === 1) {
+    chips.push(diffLabel(s.difficulties[0].id));
+  } else {
+    s.difficulties.forEach((d) => chips.push(`${diffLabel(d.id)} ${d.percent}%`));
+  }
+  if (paper) chips.push(paper);
+  chips.push(`${s.questionCount} questions`);
+  chips.push(`${s.vcaaCount} VCAA · ${s.modifiedCount} modified`);
+  return chips;
 }
 
 export function PracticeResult({

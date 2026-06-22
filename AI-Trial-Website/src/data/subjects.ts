@@ -15,6 +15,7 @@ export const SUBJECTS: Subject[] = [
     topics: [
       {
         overall: "Functions and Relations",
+        unit: 3,
         subs: [
           "Type of relation",
           "Sketching Graphs",
@@ -29,10 +30,12 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Inverse Functions",
+        unit: 3,
         subs: ["Function Notation", "Finding Inverse"],
       },
       {
         overall: "Polynomial Functions",
+        unit: 3,
         subs: [
           "Linear",
           "The number of roots for two linear equations",
@@ -44,6 +47,7 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Exponential & Logarithmic Functions",
+        unit: 3,
         subs: [
           "Exponential and Logarithmic Function",
           "Solving the Exponential Equation",
@@ -51,6 +55,7 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Circular (Trigonometric) Functions",
+        unit: 3,
         subs: [
           "Identity Rule",
           "Special Angle",
@@ -61,6 +66,7 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Differentiation",
+        unit: 3,
         subs: [
           "Derivative of polynomials",
           "Chain Rule",
@@ -83,6 +89,7 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Integration",
+        unit: 4,
         subs: [
           "Integrating Exponential",
           "Integrating 1/x",
@@ -97,6 +104,7 @@ export const SUBJECTS: Subject[] = [
       },
       {
         overall: "Probability & Statistics",
+        unit: 4,
         subs: [
           "Discrete random variable",
           "Probability Distributions",
@@ -118,10 +126,10 @@ export const SUBJECTS: Subject[] = [
     short: "Methods 1 & 2",
     family: "VCE",
     topics: [
-      { overall: "Functions and Graphs", subs: ["Linear", "Quadratic", "Cubic", "Power Functions"] },
-      { overall: "Algebra", subs: ["Indices", "Simultaneous Equations", "Factorising"] },
-      { overall: "Probability", subs: ["Sample Spaces", "Conditional Probability"] },
-      { overall: "Introductory Calculus", subs: ["Rates of Change", "First Principles"] },
+      { overall: "Functions and Graphs", unit: 1, subs: ["Linear", "Quadratic", "Cubic", "Power Functions"] },
+      { overall: "Algebra", unit: 1, subs: ["Indices", "Simultaneous Equations", "Factorising"] },
+      { overall: "Probability", unit: 2, subs: ["Sample Spaces", "Conditional Probability"] },
+      { overall: "Introductory Calculus", unit: 2, subs: ["Rates of Change", "First Principles"] },
     ],
   },
   {
@@ -130,10 +138,10 @@ export const SUBJECTS: Subject[] = [
     short: "Specialist 3 & 4",
     family: "VCE",
     topics: [
-      { overall: "Complex Numbers", subs: ["Cartesian Form", "Polar Form", "Regions & Loci"] },
-      { overall: "Vectors", subs: ["Vector Operations", "Vector Calculus", "Applications"] },
-      { overall: "Differential Equations", subs: ["First Order", "Second Order", "Slope Fields"] },
-      { overall: "Kinematics", subs: ["Velocity & Acceleration", "Projectiles"] },
+      { overall: "Complex Numbers", unit: 3, subs: ["Cartesian Form", "Polar Form", "Regions & Loci"] },
+      { overall: "Vectors", unit: 3, subs: ["Vector Operations", "Vector Calculus", "Applications"] },
+      { overall: "Differential Equations", unit: 4, subs: ["First Order", "Second Order", "Slope Fields"] },
+      { overall: "Kinematics", unit: 4, subs: ["Velocity & Acceleration", "Projectiles"] },
     ],
   },
   {
@@ -142,9 +150,9 @@ export const SUBJECTS: Subject[] = [
     short: "Specialist 1 & 2",
     family: "VCE",
     topics: [
-      { overall: "Number Systems", subs: ["Proof", "Sequences & Series"] },
-      { overall: "Trigonometry", subs: ["Identities", "Circular Functions"] },
-      { overall: "Matrices", subs: ["Operations", "Transformations"] },
+      { overall: "Number Systems", unit: 1, subs: ["Proof", "Sequences & Series"] },
+      { overall: "Trigonometry", unit: 1, subs: ["Identities", "Circular Functions"] },
+      { overall: "Matrices", unit: 2, subs: ["Operations", "Transformations"] },
     ],
   },
   {

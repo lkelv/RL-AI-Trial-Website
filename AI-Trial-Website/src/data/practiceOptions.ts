@@ -9,7 +9,7 @@ export const DIFFICULTIES: OptionItem<Difficulty>[] = [
   { id: "easy", label: "Easy", hint: "Build confidence with the fundamentals" },
   { id: "normal", label: "Normal", hint: "Standard exam-level questions" },
   { id: "intermediate", label: "Intermediate", hint: "Multi-step, applied problems" },
-  { id: "challenging", label: "Challenging", hint: "Stretch & extension — top-band difficulty" },
+  { id: "challenging", label: "Challenging", hint: "Stretch & extension, top-band difficulty" },
 ];
 
 export const PAPER_TYPES_BY_FAMILY: Record<SubjectFamily, OptionItem<PaperType>[]> = {
@@ -17,7 +17,7 @@ export const PAPER_TYPES_BY_FAMILY: Record<SubjectFamily, OptionItem<PaperType>[
     { id: "exam1", label: "Exam 1", hint: "Technology-free short answer" },
     { id: "exam2", label: "Exam 2", hint: "Technology-active" },
     { id: "mc", label: "Multiple Choice", hint: "Exam 2 Section A style" },
-    { id: "exam2-extended", label: "Exam 2 — Extended Response", hint: "Long-form application" },
+    { id: "exam2-extended", label: "Exam 2 · Extended Response", hint: "Long-form application" },
   ],
   IB: [
     { id: "tech-active", label: "Tech Active", hint: "Calculator permitted" },

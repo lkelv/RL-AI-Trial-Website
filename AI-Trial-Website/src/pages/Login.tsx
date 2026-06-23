@@ -70,7 +70,7 @@ export default function Login() {
             <span className="text-mint">{ROLE_COPY[requestedRole] ?? "RL portal"}</span>
           </h2>
           <p className="mt-4 text-ink-dim">
-            One login for everything RL — practice, marking, classrooms and live
+            One login for everything RL: practice, marking, classrooms and live
             progress.
           </p>
         </div>

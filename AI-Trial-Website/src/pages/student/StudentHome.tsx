@@ -68,7 +68,7 @@ export default function StudentHome() {
           student / {myClasses.length} {myClasses.length === 1 ? "class" : "classes"} / {tasksDue} due
         </p>
 
-        {/* asymmetric module grid — hairline gaps expose structure */}
+        {/* asymmetric module grid - hairline gaps expose structure */}
         <div
           className="rl-reveal mt-10 grid gap-px border border-line bg-line sm:grid-cols-3 sm:grid-rows-2"
           style={stagger(2)}
@@ -79,7 +79,7 @@ export default function StudentHome() {
             accent="mint"
             icon={<IconSparkles size={36} />}
             title="AI Features"
-            desc="Generate practice papers, get instant AI marking, and ask the AI tutor any question — your personal maths tutor on demand."
+            desc="Generate practice papers, get instant AI marking, and ask the AI tutor any question. Your personal maths tutor on demand."
             cta="open ai tools"
           />
           <Tile

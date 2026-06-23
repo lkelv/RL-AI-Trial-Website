@@ -81,7 +81,7 @@ export const ASK_AI_SUGGESTIONS: AskAiSuggestion[] = [
 
 export const FALLBACK_ANSWER: AskAiAnswer = {
   summary:
-    "That's a composite function — a function inside another — so we use the chain rule. Here's the method on a worked example, y = (2x + 1)⁵.",
+    "That's a composite function (a function inside another), so we use the chain rule. Here's the method on a worked example, y = (2x + 1)⁵.",
   steps: [
     {
       title: "Identify the inner and outer functions",

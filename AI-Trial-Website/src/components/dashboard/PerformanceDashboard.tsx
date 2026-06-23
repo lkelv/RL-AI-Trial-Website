@@ -100,7 +100,7 @@ export function PerformanceDashboard({
         </div>
       </div>
 
-      {/* log — scrolls internally only */}
+      {/* log - scrolls internally only */}
       <div
         className="rl-reveal flex min-h-0 flex-col border border-line bg-raised"
         style={{ animationDelay: "340ms" }}

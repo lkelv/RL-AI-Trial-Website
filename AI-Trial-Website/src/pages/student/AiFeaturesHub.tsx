@@ -15,7 +15,7 @@ const FEATURES: {
   {
     title: "Practice",
     description:
-      "Build a custom VCAA-style paper in six quick steps — questions and full worked solutions, generated instantly.",
+      "Build a custom VCAA-style paper in six quick steps, with questions and full worked solutions, generated instantly.",
     to: "/student/ai/practice",
     accent: "mint",
   },
@@ -55,7 +55,7 @@ export default function AiFeaturesHub() {
           </Badge>
         </div>
 
-        {/* chapter index — oversized numerals, type-led */}
+        {/* chapter index - oversized numerals, type-led */}
         <div className="mt-12 border-t border-line">
           {FEATURES.map((f, i) => (
             <Link

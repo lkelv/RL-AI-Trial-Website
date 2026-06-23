@@ -29,7 +29,7 @@ const ROLES: {
   {
     title: "Teacher",
     description:
-      "Upload homework, record scores and manage your classes — the tutor workspace.",
+      "Upload homework, record scores and manage your classes, the tutor workspace.",
     to: "/teacher",
     accent: "amber",
     comingSoon: true,
@@ -49,12 +49,12 @@ export default function Landing() {
     <div className="relative flex min-h-[100dvh] flex-col">
       <header className="flex items-center justify-between gap-4 border-b border-line px-6 py-5 sm:px-10">
         <Logo />
-        <span className="font-mono text-xs text-ink-faint">VCE · IB — tutoring platform</span>
+        <span className="font-mono text-xs text-ink-faint">VCE · IB tutoring platform</span>
       </header>
 
       <main className="flex-1 px-6 sm:px-10">
         <div className="mx-auto w-full max-w-6xl">
-          {/* masthead — deliberately asymmetric: headline left-heavy, lede dropped to baseline */}
+          {/* masthead - deliberately asymmetric: headline left-heavy, lede dropped to baseline */}
           <div className="grid gap-x-12 gap-y-6 pt-16 pb-14 sm:pt-24 lg:grid-cols-12">
             <h1
               className="rl-reveal font-display text-6xl leading-[0.92] text-ink sm:text-7xl lg:col-span-8"
@@ -68,12 +68,12 @@ export default function Landing() {
               style={stagger(1)}
             >
               AI-generated practice, instant paper marking, and live progress
-              tracking — purpose-built for VCE&nbsp;&amp;&nbsp;IB students, their
+              tracking, purpose-built for VCE&nbsp;&amp;&nbsp;IB students, their
               parents, and tutors.
             </p>
           </div>
 
-          {/* portal directory — a bordered index, not a card grid */}
+          {/* portal directory - a bordered index, not a card grid */}
           <nav className="border-t border-line pb-20">
             {ROLES.map((role, i) => (
               <Link

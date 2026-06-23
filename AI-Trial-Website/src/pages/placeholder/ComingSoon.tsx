@@ -17,7 +17,7 @@ const VARIANTS = {
     icon: <IconTeacher size={26} />,
     accent: "amber" as AccentName,
     blurb:
-      "The tutor's command centre — upload homework, record and release scores, and run your classes.",
+      "The tutor's command centre: upload homework, record and release scores, and run your classes.",
     features: [
       "Create & assign homework with due dates",
       "Record marks and release results to students",
@@ -31,7 +31,7 @@ const VARIANTS = {
     icon: <IconAdmin size={26} />,
     accent: "mint" as AccentName,
     blurb:
-      "Full oversight across the whole RL platform — for keeping everything running smoothly.",
+      "Full oversight across the whole RL platform, for keeping everything running smoothly.",
     features: [
       "Manage all students, parents & tutors",
       "Edit any class, score or attendance record",
@@ -55,7 +55,7 @@ export default function ComingSoon({ variant }: { variant: "teacher" | "admin" }
 
       <main className="flex flex-1 items-center px-6 py-10 sm:px-10">
         <div className="mx-auto grid w-full max-w-5xl items-center gap-x-14 gap-y-10 lg:grid-cols-[1.05fr_0.95fr]">
-          {/* intro — left aligned, no hero centering */}
+          {/* intro - left aligned, no hero centering */}
           <div>
             <div className="rl-reveal flex items-center gap-3" style={stagger(0)}>
               <span style={{ color }}>{v.icon}</span>
@@ -87,7 +87,7 @@ export default function ComingSoon({ variant }: { variant: "teacher" | "admin" }
             </div>
           </div>
 
-          {/* roadmap — a spec-sheet ledger of what's coming */}
+          {/* roadmap - a spec-sheet ledger of what's coming */}
           <div className="rl-reveal overflow-hidden border border-line bg-raised" style={stagger(3)}>
             <div className="flex items-center justify-between border-b border-line px-5 py-3">
               <span className="font-mono text-[0.7rem] text-ink-faint">on the roadmap</span>

@@ -30,7 +30,7 @@ export default function AiMarking() {
 
   function pickFile(file: File | undefined) {
     if (!file) return;
-    // We only read the name for display — the content is never processed.
+    // We only read the name for display - the content is never processed.
     setFileName(file.name);
   }
 
@@ -68,7 +68,7 @@ export default function AiMarking() {
               <p className="font-display text-lg text-ink">
                 Drag &amp; drop your PDF here
               </p>
-              <p className="mt-1 text-sm text-ink-dim">or click to browse — any worked-solutions PDF</p>
+              <p className="mt-1 text-sm text-ink-dim">or click to browse, any worked-solutions PDF</p>
               <input
                 ref={inputRef}
                 type="file"
@@ -94,7 +94,7 @@ export default function AiMarking() {
 
             <div className="mt-6 flex items-center justify-between">
               <p className="max-w-sm text-xs text-ink-faint">
-                Your file stays on your device — this demo returns a pre-marked
+                Your file stays on your device. This demo returns a pre-marked
                 sample so you can preview the experience.
               </p>
               <Button
@@ -135,7 +135,7 @@ export default function AiMarking() {
                   </Badge>
                 </div>
                 <p className="mt-1 text-sm text-ink-dim">
-                  Strong work — clear method throughout. Watch your notation in Q4
+                  Strong work, clear method throughout. Watch your notation in Q4
                   and show one more line of working in Q6.
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function AiMarking() {
               <PdfViewer
                 href={MARKED_PDF.href}
                 downloadName={MARKED_PDF.downloadName}
-                label="AI-marked paper — with feedback"
+                label="AI-marked paper, with feedback"
                 className="h-[70vh] min-h-[480px]"
               />
             </div>

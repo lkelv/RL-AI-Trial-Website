@@ -45,7 +45,7 @@ export default function AskAi() {
     {
       id: nextId(),
       role: "assistant",
-      text: "Hi Aisha 👋 I'm your RL AI tutor. Ask me any maths question — or try one of the examples below — and I'll walk you through it step by step.",
+      text: "Hi Aisha 👋 I'm your RL AI tutor. Ask me any maths question, or try one of the examples below, and I'll walk you through it step by step.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -149,7 +149,7 @@ export default function AskAi() {
             </button>
           </form>
           <p className="mt-2 text-center text-[0.68rem] text-ink-faint">
-            RL AI · Preview — responses are illustrative for this demo.
+            RL AI · Preview, responses are illustrative for this demo.
           </p>
         </div>
       </div>

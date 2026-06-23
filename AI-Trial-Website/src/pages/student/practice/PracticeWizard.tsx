@@ -30,7 +30,7 @@ import { TopicMultiSelect } from "./TopicMultiSelect";
 
 const STEPS = [
   { label: "Subject", title: "Choose your subject", desc: "Which course are you practising for?" },
-  { label: "Topics", title: "Pick your topics", desc: "Choose one or more topics — or grab a whole unit at once." },
+  { label: "Topics", title: "Pick your topics", desc: "Choose one or more topics, or grab a whole unit at once." },
   { label: "Difficulty", title: "Set the difficulty", desc: "Select one or more levels. We'll split the paper by the percentages you choose." },
   { label: "Type", title: "Paper type", desc: "What kind of paper do you want to generate?" },
   { label: "Questions", title: "How many questions?", desc: "Choose how long your paper should be." },
@@ -249,7 +249,7 @@ export default function PracticeWizard() {
             <p className="mt-1 text-sm text-ink-dim">{meta.desc}</p>
 
             <div className="mt-6">
-              {/* STEP 1 — Subject */}
+              {/* STEP 1 - Subject */}
               {s.step === 1 && (
                 <div className="grid gap-3 sm:grid-cols-2">
                   {SUBJECTS.map((subj) => (
@@ -270,7 +270,7 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 2 — Topics (multi-select) */}
+              {/* STEP 2 - Topics (multi-select) */}
               {s.step === 2 && (
                 <div>
                   <TopicMultiSelect
@@ -284,7 +284,7 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 3 — Difficulty (multi-select + % mix) */}
+              {/* STEP 3 - Difficulty (multi-select + % mix) */}
               {s.step === 3 && (
                 <div>
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -358,7 +358,7 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 4 — Type */}
+              {/* STEP 4 - Type */}
               {s.step === 4 && (
                 <div className="grid gap-3 sm:grid-cols-2">
                   {paperTypes.map((t) => (
@@ -373,7 +373,7 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 5 — Questions */}
+              {/* STEP 5 - Questions */}
               {s.step === 5 && (
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -399,7 +399,7 @@ export default function PracticeWizard() {
                 </div>
               )}
 
-              {/* STEP 6 — Source */}
+              {/* STEP 6 - Source */}
               {s.step === 6 && (
                 <div>
                   <div className="grid gap-4 sm:grid-cols-2">

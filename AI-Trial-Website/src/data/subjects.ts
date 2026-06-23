@@ -9,7 +9,7 @@ import type { Subject } from "../types";
 export const SUBJECTS: Subject[] = [
   {
     id: "MM34",
-    label: "Maths Methods — Units 3 & 4",
+    label: "Maths Methods · Units 3 & 4",
     short: "Methods 3 & 4",
     family: "VCE",
     topics: [
@@ -122,7 +122,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "MM12",
-    label: "Maths Methods — Units 1 & 2",
+    label: "Maths Methods · Units 1 & 2",
     short: "Methods 1 & 2",
     family: "VCE",
     topics: [
@@ -134,7 +134,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "SM34",
-    label: "Specialist Maths — Units 3 & 4",
+    label: "Specialist Maths · Units 3 & 4",
     short: "Specialist 3 & 4",
     family: "VCE",
     topics: [
@@ -146,7 +146,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "SM12",
-    label: "Specialist Maths — Units 1 & 2",
+    label: "Specialist Maths · Units 1 & 2",
     short: "Specialist 1 & 2",
     family: "VCE",
     topics: [
@@ -157,7 +157,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "IB11SL",
-    label: "Year 11 IB — Mathematics SL",
+    label: "Year 11 IB · Mathematics SL",
     short: "IB SL (Yr 11)",
     family: "IB",
     topics: [
@@ -168,7 +168,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "IB11HL",
-    label: "Year 11 IB — Mathematics HL",
+    label: "Year 11 IB · Mathematics HL",
     short: "IB HL (Yr 11)",
     family: "IB",
     topics: [
@@ -179,7 +179,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "IB12HL",
-    label: "Year 12 IB — Mathematics HL",
+    label: "Year 12 IB · Mathematics HL",
     short: "IB HL (Yr 12)",
     family: "IB",
     topics: [
@@ -190,7 +190,7 @@ export const SUBJECTS: Subject[] = [
   },
   {
     id: "IBAL",
-    label: "IB — Applications & Interpretation",
+    label: "IB · Applications & Interpretation",
     short: "IB AL",
     family: "IB",
     topics: [

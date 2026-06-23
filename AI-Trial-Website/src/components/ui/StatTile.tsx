@@ -38,7 +38,7 @@ export function StatTile({ stat }: { stat: StatCard }) {
             color: flat ? "var(--color-ink-faint)" : up ? "var(--color-good)" : "var(--color-warn)",
           }}
         >
-          {flat ? "—" : `${up ? "+" : "−"}${Math.abs(stat.trend)}`}
+          {flat ? "0" : `${up ? "+" : "−"}${Math.abs(stat.trend)}`}
         </span>
       </div>
 

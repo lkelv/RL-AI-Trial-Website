@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ParentChart } from "../../types";
 
 /** Measure a container so the SVG renders at exact pixel size (no viewBox
- *  distortion — circles stay round, text stays crisp, it fills the box). */
+ *  distortion - circles stay round, text stays crisp, it fills the box). */
 function useSize(ref: React.RefObject<HTMLDivElement | null>) {
   const [size, setSize] = useState({ w: 0, h: 0 });
   useEffect(() => {

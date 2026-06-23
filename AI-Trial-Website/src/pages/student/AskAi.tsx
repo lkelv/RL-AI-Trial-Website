@@ -91,7 +91,7 @@ export default function AskAi() {
                 <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mint/15 text-mint">
                   <IconSparkles size={17} />
                 </span>
-                <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-line/70 bg-raised/50 px-4 py-3">
+                <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-line bg-raised px-4 py-3">
                   {m.answer ? <AnswerBubble answer={m.answer} /> : (
                     <p className="text-sm leading-relaxed text-ink-dim">{m.text}</p>
                   )}
@@ -105,7 +105,7 @@ export default function AskAi() {
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mint/15 text-mint">
                 <IconSparkles size={17} />
               </span>
-              <div className="rounded-2xl rounded-tl-sm border border-line/70 bg-raised/50 px-4 py-3.5">
+              <div className="rounded-2xl rounded-tl-sm border border-line bg-raised px-4 py-3.5">
                 <TypingDots />
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function AskAi() {
                 type="button"
                 disabled={typing}
                 onClick={() => send(s.question, s.answer)}
-                className="rounded-full border border-line bg-raised/40 px-3 py-1.5 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink disabled:opacity-40"
+                className="rounded-md border border-line bg-raised px-3 py-1.5 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink disabled:opacity-40"
               >
                 {s.question}
               </button>
@@ -138,12 +138,12 @@ export default function AskAi() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask the AI tutor a question…"
-              className="flex-1 rounded-xl border border-line bg-base/60 px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+              className="flex-1 rounded-md border border-line bg-base px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
             />
             <button
               type="submit"
               disabled={!input.trim() || typing}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mint text-night transition-colors hover:bg-mint-soft disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-mint text-night transition-colors hover:bg-mint-soft disabled:cursor-not-allowed disabled:opacity-40"
             >
               <IconArrowRight size={20} />
             </button>

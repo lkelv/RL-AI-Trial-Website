@@ -29,7 +29,7 @@ export function RoleCard({
   return (
     <Link
       to={to}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-raised/40 p-6 transition-all duration-300 ease-out hover:-translate-y-1 ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-xl border bg-raised p-6 transition-all duration-300 ease-out hover:-translate-y-1 ${
         comingSoon ? "border-line/60 opacity-80 hover:opacity-100" : "border-line/70"
       }`}
       style={{ ["--rc" as string]: ACCENT_COLOR[accent] }}

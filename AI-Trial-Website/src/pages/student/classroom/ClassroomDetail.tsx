@@ -60,12 +60,12 @@ export default function ClassroomDetail() {
       <div className="mx-auto w-full max-w-4xl px-6 py-8">
         {/* banner */}
         <div
-          className="rl-reveal relative overflow-hidden rounded-2xl p-6"
+          className="rl-reveal relative overflow-hidden rounded-xl p-6"
           style={{ background: `color-mix(in srgb, ${c} 28%, var(--color-night))` }}
         >
           <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
           <div className="relative">
-            <h1 className="font-display text-3xl text-ink drop-shadow sm:text-4xl">{cls.name}</h1>
+            <h1 className="font-display text-3xl text-ink sm:text-4xl">{cls.name}</h1>
             <p className="mt-1 text-ink/80">{cls.section}</p>
             <div className="mt-4 flex items-center gap-2">
               <Avatar name={cls.teacherName} color={cls.themeColor} size={32} />
@@ -89,7 +89,7 @@ export default function ClassroomDetail() {
             >
               {t.label}
               {t.id === "tasks" && cls.upcomingCount > 0 && (
-                <span className="ml-1.5 rounded-full bg-amber/20 px-1.5 py-0.5 font-mono text-[10px] text-amber">
+                <span className="ml-1.5 rounded bg-amber/20 px-1.5 py-0.5 font-mono text-[10px] text-amber">
                   {cls.upcomingCount}
                 </span>
               )}
@@ -107,7 +107,7 @@ export default function ClassroomDetail() {
               {announcements.map((a, i) => (
                 <div
                   key={a.id}
-                  className="rl-reveal rounded-2xl border border-line/70 bg-raised/45 p-4"
+                  className="rl-reveal rounded-xl border border-line bg-raised p-4"
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
                   <div className="flex items-center gap-3">
@@ -142,7 +142,7 @@ export default function ClassroomDetail() {
                 return (
                   <div
                     key={t.id}
-                    className="rl-reveal flex items-center gap-4 rounded-xl border border-line/70 bg-raised/45 p-4"
+                    className="rl-reveal flex items-center gap-4 rounded-xl border border-line bg-raised p-4"
                     style={{ animationDelay: `${i * 50}ms` }}
                   >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-base/60 text-mint">
@@ -172,7 +172,7 @@ export default function ClassroomDetail() {
                   key={f.id}
                   href={f.href ?? "#"}
                   onClick={(e) => !f.href && e.preventDefault()}
-                  className="rl-reveal flex items-center gap-3 rounded-xl border border-line/70 bg-raised/45 p-3 transition-colors hover:border-mint/40"
+                  className="rl-reveal flex items-center gap-3 rounded-xl border border-line bg-raised p-3 transition-colors hover:border-mint/40"
                   style={{ animationDelay: `${i * 40}ms` }}
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-base/60 text-mint">
@@ -196,7 +196,7 @@ export default function ClassroomDetail() {
                 </h3>
                 <div className="space-y-2">
                   {teachers.map((p) => (
-                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line/70 bg-raised/45 p-3">
+                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line bg-raised p-3">
                       <Avatar name={p.name} color={p.avatarColor} size={40} />
                       <div>
                         <div className="text-sm font-medium text-ink">{p.name}</div>
@@ -214,7 +214,7 @@ export default function ClassroomDetail() {
                 </h3>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {students.map((p) => (
-                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line/70 bg-raised/45 p-3">
+                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line bg-raised p-3">
                       <Avatar name={p.name} color={p.avatarColor} size={36} />
                       <span className="text-sm text-ink">{p.name}</span>
                       {p.id === user?.id && <Badge color="mint" className="ml-auto">You</Badge>}

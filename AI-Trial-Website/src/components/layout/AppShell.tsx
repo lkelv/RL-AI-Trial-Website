@@ -17,7 +17,7 @@ export function AppShell({ children, back, fill = false }: AppShellProps) {
 
   return (
     <div className="relative flex h-[100dvh] flex-col">
-      <header className="z-20 flex items-center gap-3 border-b border-line/70 bg-base/65 px-4 py-3 backdrop-blur-xl sm:px-6">
+      <header className="z-20 flex items-center gap-3 border-b border-line bg-base px-4 py-3 sm:px-6">
         <Link to="/" className="transition-opacity hover:opacity-80">
           <Logo />
         </Link>
@@ -25,7 +25,7 @@ export function AppShell({ children, back, fill = false }: AppShellProps) {
         {back && (
           <Link
             to={back.to}
-            className="ml-1 inline-flex items-center gap-1.5 rounded-lg border border-line bg-raised/50 px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-mint/50 hover:text-ink sm:ml-3"
+            className="ml-1 inline-flex items-center gap-1.5 rounded-md border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-mint/50 hover:text-ink sm:ml-3"
           >
             <span aria-hidden>←</span>
             <span className="hidden sm:inline">{back.label}</span>
@@ -43,7 +43,7 @@ export function AppShell({ children, back, fill = false }: AppShellProps) {
               <button
                 type="button"
                 onClick={logout}
-                className="rounded-lg border border-line bg-raised/50 px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-amber/50 hover:text-amber"
+                className="rounded-md border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-amber/50 hover:text-amber"
               >
                 Log&nbsp;out
               </button>

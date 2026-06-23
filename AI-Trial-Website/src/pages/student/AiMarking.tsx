@@ -63,11 +63,11 @@ export default function AiMarking() {
                 setDragging(false);
                 pickFile(e.dataTransfer.files?.[0]);
               }}
-              className={`rl-reveal flex flex-col items-center justify-center rounded-2xl border-2 border-dashed p-12 text-center transition-colors ${
-                dragging ? "border-mint bg-mint/10" : "border-line bg-raised/40"
+              className={`rl-reveal flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-12 text-center transition-colors ${
+                dragging ? "border-mint bg-mint/10" : "border-line bg-raised"
               }`}
             >
-              <span className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-base/70 text-mint">
+              <span className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-base text-mint">
                 <IconUpload size={30} />
               </span>
               <p className="font-display text-lg text-ink">
@@ -127,7 +127,7 @@ export default function AiMarking() {
         {phase === "result" && (
           <div className="mt-8">
             {/* score banner */}
-            <div className="rl-reveal flex flex-wrap items-center gap-4 rounded-2xl border border-mint/40 bg-mint/10 p-5">
+            <div className="rl-reveal flex flex-wrap items-center gap-4 rounded-xl border border-mint/40 bg-mint/10 p-5">
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-mint/20 text-mint">
                 <IconCheck size={28} />
               </span>

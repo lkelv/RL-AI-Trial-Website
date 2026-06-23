@@ -9,8 +9,8 @@ interface PdfViewerProps {
 
 export function PdfViewer({ href, downloadName, label, className = "" }: PdfViewerProps) {
   return (
-    <div className={`flex flex-col overflow-hidden rounded-xl border border-line/70 bg-base/60 ${className}`}>
-      <div className="flex items-center gap-2 border-b border-line/70 bg-raised/50 px-3 py-2">
+    <div className={`flex flex-col overflow-hidden rounded-xl border border-line bg-base ${className}`}>
+      <div className="flex items-center gap-2 border-b border-line bg-raised px-3 py-2">
         <IconFile size={16} className="text-mint" />
         <span className="truncate text-sm font-medium text-ink">{label}</span>
         <div className="ml-auto flex items-center gap-1">
@@ -19,7 +19,7 @@ export function PdfViewer({ href, downloadName, label, className = "" }: PdfView
             target="_blank"
             rel="noreferrer"
             title="Open in new tab"
-            className="inline-flex items-center gap-1 rounded-md border border-line bg-base/60 px-2 py-1 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink"
+            className="inline-flex items-center gap-1 rounded-md border border-line bg-base px-2 py-1 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink"
           >
             <IconExternal size={13} /> Open
           </a>

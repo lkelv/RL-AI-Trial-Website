@@ -37,18 +37,12 @@ export function FakeAiOverlay({
   const progress = ((active + 1) / phases.length) * 100;
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center rounded-[inherit] bg-night/80 p-6 backdrop-blur-md rl-fade-in">
+    <div className="absolute inset-0 z-30 flex items-center justify-center rounded-[inherit] bg-night/95 p-6 rl-fade-in">
       <div className="w-full max-w-md text-center">
         <div className="relative mx-auto mb-6 h-20 w-20">
+          <div className="absolute inset-0 rounded-full border border-line" />
           <div
-            className="absolute inset-0 rounded-full"
-            style={{
-              background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
-              animation: "rl-pulse-glow 1.6s ease-in-out infinite",
-            }}
-          />
-          <div
-            className="absolute inset-1.5 rounded-full border border-dashed border-mint/40"
+            className="absolute inset-1.5 rounded-full border border-dashed border-mint/50"
             style={{ animation: "rl-spin 3.5s linear infinite" }}
           />
           <div className="absolute inset-0 flex items-center justify-center text-mint">

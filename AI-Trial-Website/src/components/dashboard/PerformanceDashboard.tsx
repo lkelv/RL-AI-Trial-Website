@@ -32,7 +32,7 @@ function LogRow({ entry }: { entry: LogEntry }) {
   const s = SEVERITY[entry.severity];
   return (
     <div
-      className="flex gap-3 rounded-xl border border-line/60 bg-base/40 p-3"
+      className="flex gap-3 rounded-xl border border-line/60 bg-base p-3"
       style={{ borderLeft: `3px solid ${s.color}` }}
     >
       <span
@@ -88,7 +88,7 @@ export function PerformanceDashboard({
 
       {/* chart */}
       <div
-        className="rl-reveal flex flex-col rounded-2xl border border-line/70 bg-raised/45 p-4"
+        className="rl-reveal flex flex-col rounded-xl border border-line bg-raised p-4"
         style={{ height: "clamp(160px, 26vh, 250px)", animationDelay: "260ms" }}
       >
         <div className="mb-1 flex items-center justify-between">
@@ -102,7 +102,7 @@ export function PerformanceDashboard({
 
       {/* log — scrolls internally only */}
       <div
-        className="rl-reveal flex min-h-0 flex-col rounded-2xl border border-line/70 bg-raised/45"
+        className="rl-reveal flex min-h-0 flex-col rounded-xl border border-line bg-raised"
         style={{ animationDelay: "340ms" }}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-line/60 px-4 py-3">

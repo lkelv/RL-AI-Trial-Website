@@ -122,14 +122,14 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between rounded-xl border border-line bg-base/70 px-3.5 py-2.5 text-sm outline-none transition-colors hover:border-mint/40 focus:border-mint/60"
+        className="flex w-full items-center justify-between rounded-md border border-line bg-base px-3.5 py-2.5 text-sm outline-none transition-colors hover:border-mint/40 focus:border-mint/60"
       >
         <span className={selected.length ? "text-ink" : "text-ink-faint"}>{summary}</span>
         <IconChevronDown size={16} className={`text-ink-faint transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
-        <div className="absolute z-40 mt-2 w-full overflow-hidden rounded-xl border border-line bg-raised shadow-[0_20px_50px_-18px_rgba(0,0,0,0.9)]">
+        <div className="absolute z-40 mt-2 w-full overflow-hidden rounded-md border border-line bg-raised shadow-[0_10px_30px_-18px_rgba(0,0,0,0.7)]">
           <div className="max-h-80 overflow-y-auto p-1.5">
             {/* presets */}
             <button
@@ -217,7 +217,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
           {selected.map((s) => (
             <span
               key={s.overall}
-              className="inline-flex items-center gap-1.5 rounded-full border border-mint/30 bg-mint/10 px-2.5 py-1 text-xs text-ink"
+              className="inline-flex items-center gap-1.5 rounded-md border border-mint/30 bg-mint/10 px-2.5 py-1 text-xs text-ink"
             >
               {s.overall}
               {s.subs.length > 0 && <span className="font-mono text-[0.66rem] text-mint">·{s.subs.length}</span>}

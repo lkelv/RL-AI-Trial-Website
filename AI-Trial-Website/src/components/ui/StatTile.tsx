@@ -23,7 +23,7 @@ export function StatTile({ stat }: { stat: StatCard }) {
   const flat = stat.trend === 0;
 
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl border border-line/70 bg-raised/45 p-4 @container">
+    <div className="flex h-full flex-col justify-between rounded-xl border border-line bg-raised p-4 @container">
       <div className="flex items-start justify-between">
         <span
           className="inline-flex h-9 w-9 items-center justify-center rounded-lg"
@@ -32,7 +32,7 @@ export function StatTile({ stat }: { stat: StatCard }) {
           <Icon size={18} />
         </span>
         <span
-          className="inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[0.68rem] font-semibold font-mono"
+          className="inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[0.68rem] font-semibold font-mono"
           style={{
             color: flat ? "var(--color-ink-faint)" : up ? "var(--color-good)" : "var(--color-warn)",
             background: flat ? "transparent" : accentTint(up ? "mint" : "amber", 12),

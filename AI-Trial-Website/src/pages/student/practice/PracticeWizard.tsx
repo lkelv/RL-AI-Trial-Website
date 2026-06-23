@@ -156,7 +156,7 @@ function Stepper({
   compact?: boolean;
 }) {
   const btn =
-    "flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-base/60 text-ink transition-colors hover:border-mint/50 hover:text-mint disabled:cursor-not-allowed disabled:opacity-30";
+    "flex h-9 w-9 items-center justify-center rounded-md border border-line bg-base text-ink transition-colors hover:border-mint/50 hover:text-mint disabled:cursor-not-allowed disabled:opacity-30";
   return (
     <div className="inline-flex items-center gap-3">
       <button type="button" className={btn} onClick={() => onChange(Math.max(min, value - step))} disabled={value <= min}>
@@ -246,7 +246,7 @@ export default function PracticeWizard() {
         <div className="relative mt-6">
           <div
             key={s.step}
-            className="rl-reveal min-h-[380px] rounded-2xl border border-line/70 bg-raised/45 p-6 sm:p-7"
+            className="rl-reveal min-h-[380px] rounded-xl border border-line bg-raised p-6 sm:p-7"
           >
             <h2 className="font-display text-xl text-ink">{meta.title}</h2>
             <p className="mt-1 text-sm text-ink-dim">{meta.desc}</p>
@@ -305,7 +305,7 @@ export default function PracticeWizard() {
                   </div>
 
                   {s.difficulties.length > 0 && (
-                    <div className="mt-6 rounded-xl border border-line/70 bg-base/50 p-4">
+                    <div className="mt-6 rounded-xl border border-line bg-base p-4">
                       <div className="mb-3 flex items-center justify-between">
                         <span className="text-sm font-medium text-ink">
                           Difficulty mix {single && <span className="text-ink-faint">· 100%</span>}
@@ -406,7 +406,7 @@ export default function PracticeWizard() {
               {s.step === 6 && (
                 <div>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-xl border border-line/70 bg-base/50 p-4">
+                    <div className="rounded-xl border border-line bg-base p-4">
                       <Badge color="mint">{SOURCE_LABELS.vcaa.title}</Badge>
                       <p className="mt-2 mb-4 text-xs leading-snug text-ink-dim">{SOURCE_LABELS.vcaa.blurb}</p>
                       <Stepper
@@ -418,7 +418,7 @@ export default function PracticeWizard() {
                         }
                       />
                     </div>
-                    <div className="rounded-xl border border-line/70 bg-base/50 p-4">
+                    <div className="rounded-xl border border-line bg-base p-4">
                       <Badge color="amber">{SOURCE_LABELS.modified.title}</Badge>
                       <p className="mt-2 mb-4 text-xs leading-snug text-ink-dim">{SOURCE_LABELS.modified.blurb}</p>
                       <Stepper

@@ -23,10 +23,10 @@ export function OptionTile({
       type="button"
       onClick={onClick}
       aria-pressed={selected}
-      className={`group relative flex w-full items-start gap-3 rounded-xl border p-4 text-left transition-all duration-200 ${
+      className={`group relative flex w-full items-start gap-3 rounded-lg border p-4 text-left transition-all duration-200 ${
         selected
           ? "border-mint/70 bg-mint/10 shadow-[0_0_0_1px_var(--color-mint)_inset]"
-          : "border-line/70 bg-raised/40 hover:border-mint/40 hover:bg-raised/70"
+          : "border-line bg-raised hover:border-mint/40 hover:bg-raised-2"
       } ${className}`}
     >
       {icon && (

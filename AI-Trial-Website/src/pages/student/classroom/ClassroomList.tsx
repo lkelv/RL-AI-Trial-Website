@@ -13,7 +13,7 @@ function ClassCard({ cls }: { cls: ClassRoom }) {
   return (
     <Link
       to={`/student/classroom/${cls.id}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line/70 bg-raised/45 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40"
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-raised transition-all duration-300 hover:-translate-y-1 hover:border-mint/40"
     >
       {/* banner */}
       <div
@@ -22,7 +22,7 @@ function ClassCard({ cls }: { cls: ClassRoom }) {
       >
         <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
         <div className="relative">
-          <h3 className="font-display text-xl text-ink drop-shadow">{cls.name}</h3>
+          <h3 className="font-display text-xl text-ink">{cls.name}</h3>
           <p className="text-xs text-ink/80">{cls.section}</p>
         </div>
         <div className="absolute -bottom-5 right-4">

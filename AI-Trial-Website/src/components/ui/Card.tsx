@@ -9,9 +9,9 @@ interface CardProps {
 export function Card({ children, className = "", interactive = false }: CardProps) {
   return (
     <div
-      className={`rounded-xl border border-line bg-raised ${
+      className={`border border-line bg-raised ${
         interactive
-          ? "cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-mint/45 hover:bg-raised-2"
+          ? "cursor-pointer transition-colors duration-150 hover:border-mint hover:bg-raised-2"
           : ""
       } ${className}`}
     >

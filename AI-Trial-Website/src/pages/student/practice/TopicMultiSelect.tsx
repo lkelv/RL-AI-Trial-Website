@@ -31,7 +31,7 @@ function subSelected(sels: TopicSelection[], topic: SubjectTopic, sub: string): 
 function Checkbox({ state }: { state: TriState }) {
   return (
     <span
-      className={`flex shrink-0 items-center justify-center rounded border transition-colors ${
+      className={`flex shrink-0 items-center justify-center border transition-colors ${
         state === "none" ? "border-line text-transparent" : "border-mint bg-mint text-night"
       }`}
       style={{ height: 18, width: 18 }}
@@ -122,20 +122,20 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between rounded-md border border-line bg-base px-3.5 py-2.5 text-sm outline-none transition-colors hover:border-mint/40 focus:border-mint/60"
+        className="flex w-full items-center justify-between border border-line bg-base px-3.5 py-2.5 text-sm outline-none transition-colors hover:border-mint/40 focus:border-mint/60"
       >
         <span className={selected.length ? "text-ink" : "text-ink-faint"}>{summary}</span>
         <IconChevronDown size={16} className={`text-ink-faint transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
       {open && (
-        <div className="absolute z-40 mt-2 w-full overflow-hidden rounded-md border border-line bg-raised shadow-[0_10px_30px_-18px_rgba(0,0,0,0.7)]">
+        <div className="absolute z-40 mt-2 w-full overflow-hidden border border-line bg-raised shadow-[0_10px_30px_-18px_rgba(0,0,0,0.7)]">
           <div className="max-h-80 overflow-y-auto p-1.5">
             {/* presets */}
             <button
               type="button"
               onClick={() => setGroup(topics, !groupFull(topics))}
-              className="flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-left text-sm font-semibold text-mint transition-colors hover:bg-base/70"
+              className="flex w-full items-center gap-3 px-2.5 py-2 text-left text-sm font-semibold text-mint transition-colors hover:bg-base/70"
             >
               <Checkbox state={groupFull(topics) ? "all" : "none"} />
               All topics
@@ -147,7 +147,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
                   key={u}
                   type="button"
                   onClick={() => setGroup(group, !groupFull(group))}
-                  className="flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-left text-sm font-semibold text-mint transition-colors hover:bg-base/70"
+                  className="flex w-full items-center gap-3 px-2.5 py-2 text-left text-sm font-semibold text-mint transition-colors hover:bg-base/70"
                 >
                   <Checkbox state={groupFull(group) ? "all" : "none"} />
                   All Unit {u} topics
@@ -163,7 +163,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
               const isOpen = expanded.has(t.overall);
               return (
                 <div key={t.overall}>
-                  <div className="flex items-center rounded-lg transition-colors hover:bg-base/70">
+                  <div className="flex items-center transition-colors hover:bg-base/70">
                     <button
                       type="button"
                       onClick={() => toggleOverall(t)}
@@ -182,7 +182,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
                       <button
                         type="button"
                         onClick={() => expand(t.overall)}
-                        className="mr-1 flex h-8 w-8 items-center justify-center rounded-md text-ink-faint transition-colors hover:bg-raised hover:text-ink"
+                        className="mr-1 flex h-8 w-8 items-center justify-center text-ink-faint transition-colors hover:bg-raised hover:text-ink"
                         aria-label={isOpen ? "Collapse" : "Expand"}
                       >
                         <IconChevronDown size={15} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -197,7 +197,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
                           key={sub}
                           type="button"
                           onClick={() => toggleSub(t, sub)}
-                          className="flex w-full items-center gap-3 rounded-lg px-2.5 py-1.5 text-left text-[0.82rem] text-ink-dim transition-colors hover:bg-base/70"
+                          className="flex w-full items-center gap-3 px-2.5 py-1.5 text-left text-[0.82rem] text-ink-dim transition-colors hover:bg-base/70"
                         >
                           <Checkbox state={subSelected(selected, t, sub) ? "all" : "none"} />
                           {sub}
@@ -217,7 +217,7 @@ export function TopicMultiSelect({ topics, selected, onChange }: TopicMultiSelec
           {selected.map((s) => (
             <span
               key={s.overall}
-              className="inline-flex items-center gap-1.5 rounded-md border border-mint/30 bg-mint/10 px-2.5 py-1 text-xs text-ink"
+              className="inline-flex items-center gap-1.5 border border-mint/30 bg-mint/10 px-2.5 py-1 text-xs text-ink"
             >
               {s.overall}
               {s.subs.length > 0 && <span className="font-mono text-[0.66rem] text-mint">·{s.subs.length}</span>}

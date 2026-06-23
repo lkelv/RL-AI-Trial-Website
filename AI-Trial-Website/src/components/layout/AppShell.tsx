@@ -25,7 +25,7 @@ export function AppShell({ children, back, fill = false }: AppShellProps) {
         {back && (
           <Link
             to={back.to}
-            className="ml-1 inline-flex items-center gap-1.5 rounded-md border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-mint/50 hover:text-ink sm:ml-3"
+            className="ml-1 inline-flex items-center gap-1.5 border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-mint/50 hover:text-ink sm:ml-3"
           >
             <span aria-hidden>←</span>
             <span className="hidden sm:inline">{back.label}</span>
@@ -43,7 +43,7 @@ export function AppShell({ children, back, fill = false }: AppShellProps) {
               <button
                 type="button"
                 onClick={logout}
-                className="rounded-md border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-amber/50 hover:text-amber"
+                className="border border-line bg-raised px-3 py-1.5 text-sm text-ink-dim transition-colors hover:border-amber/50 hover:text-amber"
               >
                 Log&nbsp;out
               </button>

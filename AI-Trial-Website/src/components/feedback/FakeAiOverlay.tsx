@@ -53,9 +53,9 @@ export function FakeAiOverlay({
         <h3 className="font-display text-xl text-ink">{title}</h3>
         {subtitle && <p className="mt-1 text-sm text-ink-dim">{subtitle}</p>}
 
-        <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-raised">
+        <div className="mt-5 h-1.5 w-full overflow-hidden border border-line bg-raised">
           <div
-            className="h-full rounded-full bg-mint transition-[width] duration-500 ease-out"
+            className="h-full bg-mint transition-[width] duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -72,7 +72,7 @@ export function FakeAiOverlay({
                 }`}
               >
                 <span
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center border ${
                     done
                       ? "border-mint/60 bg-mint/15 text-mint"
                       : cur
@@ -84,7 +84,7 @@ export function FakeAiOverlay({
                     <IconCheck size={12} />
                   ) : cur ? (
                     <span
-                      className="h-1.5 w-1.5 rounded-full bg-mint"
+                      className="h-1.5 w-1.5 bg-mint"
                       style={{ animation: "rl-pulse-glow 1s ease-in-out infinite" }}
                     />
                   ) : null}

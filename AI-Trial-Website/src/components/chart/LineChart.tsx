@@ -44,7 +44,7 @@ export function LineChart({ data, className = "" }: { data: ParentChart; classNa
           const latest = (s.displayPoints ?? s.points)[n - 1];
           return (
             <div key={s.label} className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full" style={{ background: s.colorVar }} />
+              <span className="h-2.5 w-2.5" style={{ background: s.colorVar }} />
               <span className="text-xs text-ink-dim">{s.label}</span>
               <span className="font-mono text-xs font-semibold" style={{ color: s.colorVar }}>
                 {latest}

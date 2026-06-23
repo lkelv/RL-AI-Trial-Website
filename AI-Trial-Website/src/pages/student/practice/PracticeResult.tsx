@@ -57,8 +57,8 @@ export function PracticeResult({
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-8">
       <div className="rl-reveal flex flex-wrap items-center gap-3">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mint/15 text-mint">
-          <IconCheck size={24} />
+        <span className="inline-flex items-center justify-center text-mint">
+          <IconCheck size={30} />
         </span>
         <div>
           <h1 className="text-2xl text-ink sm:text-3xl">Your papers are ready</h1>

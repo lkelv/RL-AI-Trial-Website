@@ -22,7 +22,7 @@ function AnswerBubble({ answer }: { answer: AskAiAnswer }) {
       <ol className="space-y-2.5">
         {answer.steps.map((st, i) => (
           <li key={i} className="flex gap-3">
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-mint/15 font-mono text-[11px] font-semibold text-mint">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border border-mint/40 bg-mint/10 font-mono text-[11px] font-semibold text-mint">
               {i + 1}
             </span>
             <div className="min-w-0">
@@ -32,8 +32,8 @@ function AnswerBubble({ answer }: { answer: AskAiAnswer }) {
           </li>
         ))}
       </ol>
-      <div className="flex items-center gap-2 rounded-lg border border-mint/30 bg-mint/10 px-3 py-2">
-        <span className="text-xs font-semibold uppercase tracking-wide text-ink-faint">Answer</span>
+      <div className="flex items-center gap-2 border border-mint/30 bg-mint/10 px-3 py-2">
+        <span className="font-mono text-xs text-ink-faint">answer</span>
         <span className="font-mono text-sm font-semibold text-mint">{answer.result}</span>
       </div>
     </div>
@@ -82,16 +82,16 @@ export default function AskAi() {
           {messages.map((m) =>
             m.role === "user" ? (
               <div key={m.id} className="flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-br-sm border border-mint/30 bg-mint/10 px-4 py-2.5 text-sm text-ink">
+                <div className="max-w-[80%] border border-mint/30 bg-mint/10 px-4 py-2.5 text-sm text-ink">
                   {m.text}
                 </div>
               </div>
             ) : (
               <div key={m.id} className="flex gap-3">
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mint/15 text-mint">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-mint/40 bg-mint/10 text-mint">
                   <IconSparkles size={17} />
                 </span>
-                <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-line bg-raised px-4 py-3">
+                <div className="max-w-[85%] border border-line bg-raised px-4 py-3">
                   {m.answer ? <AnswerBubble answer={m.answer} /> : (
                     <p className="text-sm leading-relaxed text-ink-dim">{m.text}</p>
                   )}
@@ -102,10 +102,10 @@ export default function AskAi() {
 
           {typing && (
             <div className="flex gap-3">
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mint/15 text-mint">
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-mint/40 bg-mint/10 text-mint">
                 <IconSparkles size={17} />
               </span>
-              <div className="rounded-2xl rounded-tl-sm border border-line bg-raised px-4 py-3.5">
+              <div className="border border-line bg-raised px-4 py-3.5">
                 <TypingDots />
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function AskAi() {
                 type="button"
                 disabled={typing}
                 onClick={() => send(s.question, s.answer)}
-                className="rounded-md border border-line bg-raised px-3 py-1.5 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink disabled:opacity-40"
+                className="border border-line bg-raised px-3 py-1.5 text-xs text-ink-dim transition-colors hover:border-mint/50 hover:text-ink disabled:opacity-40"
               >
                 {s.question}
               </button>
@@ -138,12 +138,12 @@ export default function AskAi() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask the AI tutor a question…"
-              className="flex-1 rounded-md border border-line bg-base px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+              className="flex-1 border border-line bg-base px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
             />
             <button
               type="submit"
               disabled={!input.trim() || typing}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-mint text-night transition-colors hover:bg-mint-soft disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-11 w-11 shrink-0 items-center justify-center bg-mint text-night transition-colors hover:bg-mint-soft disabled:cursor-not-allowed disabled:opacity-40"
             >
               <IconArrowRight size={20} />
             </button>

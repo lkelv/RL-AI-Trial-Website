@@ -103,7 +103,7 @@ export default function Login() {
                 key={acc.id}
                 type="button"
                 onClick={() => enter(acc)}
-                className="rl-reveal group flex w-full items-center gap-3 rounded-md border border-line bg-raised p-3 text-left transition-all hover:-translate-y-0.5 hover:border-mint/50 hover:bg-raised-2"
+                className="rl-reveal group flex w-full items-center gap-3 border border-line bg-raised p-3 text-left transition-colors hover:border-mint hover:bg-raised-2"
                 style={{ animationDelay: `${120 + i * 80}ms` }}
               >
                 <Avatar name={acc.displayName} color={acc.avatarColor} size={42} />
@@ -148,7 +148,7 @@ export default function Login() {
                   setError("");
                 }}
                 autoComplete="username"
-                className="w-full rounded-md border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+                className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
                 placeholder="aisha"
               />
             </div>
@@ -165,13 +165,13 @@ export default function Login() {
                   setError("");
                 }}
                 autoComplete="current-password"
-                className="w-full rounded-md border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+                className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
                 placeholder="demo"
               />
             </div>
 
             {error && (
-              <p className="rounded-lg border border-danger/40 bg-danger/10 px-3 py-2 text-xs text-danger">
+              <p className="border border-danger/40 bg-danger/10 px-3 py-2 text-xs text-danger">
                 {error}
               </p>
             )}

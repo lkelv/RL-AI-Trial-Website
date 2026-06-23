@@ -156,7 +156,7 @@ function Stepper({
   compact?: boolean;
 }) {
   const btn =
-    "flex h-9 w-9 items-center justify-center rounded-md border border-line bg-base text-ink transition-colors hover:border-mint/50 hover:text-mint disabled:cursor-not-allowed disabled:opacity-30";
+    "flex h-9 w-9 items-center justify-center border border-line bg-base text-ink transition-colors hover:border-mint/50 hover:text-mint disabled:cursor-not-allowed disabled:opacity-30";
   return (
     <div className="inline-flex items-center gap-3">
       <button type="button" className={btn} onClick={() => onChange(Math.max(min, value - step))} disabled={value <= min}>
@@ -225,14 +225,11 @@ export default function PracticeWizard() {
   return (
     <AppShell back={{ to: "/student/ai", label: "AI Features" }}>
       <div className="mx-auto w-full max-w-3xl px-6 py-8">
-        <div className="rl-reveal flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-mint/15 text-mint">
-            <IconSparkles size={22} />
-          </span>
-          <div>
-            <h1 className="text-2xl text-ink">Practice paper generator</h1>
-            <p className="text-sm text-ink-dim">Step {s.step} of {STEPS.length} · {meta.label}</p>
-          </div>
+        <div className="rl-reveal">
+          <h1 className="text-2xl text-ink">Practice paper generator</h1>
+          <p className="mt-2 font-mono text-sm text-ink-dim">
+            step {s.step} / {STEPS.length} · {meta.label}
+          </p>
         </div>
 
         <div className="mt-6">
@@ -246,7 +243,7 @@ export default function PracticeWizard() {
         <div className="relative mt-6">
           <div
             key={s.step}
-            className="rl-reveal min-h-[380px] rounded-xl border border-line bg-raised p-6 sm:p-7"
+            className="rl-reveal min-h-[380px] border border-line bg-raised p-6 sm:p-7"
           >
             <h2 className="font-display text-xl text-ink">{meta.title}</h2>
             <p className="mt-1 text-sm text-ink-dim">{meta.desc}</p>
@@ -305,7 +302,7 @@ export default function PracticeWizard() {
                   </div>
 
                   {s.difficulties.length > 0 && (
-                    <div className="mt-6 rounded-xl border border-line bg-base p-4">
+                    <div className="mt-6 border border-line bg-base p-4">
                       <div className="mb-3 flex items-center justify-between">
                         <span className="text-sm font-medium text-ink">
                           Difficulty mix {single && <span className="text-ink-faint">· 100%</span>}
@@ -327,7 +324,7 @@ export default function PracticeWizard() {
                       </div>
 
                       {/* segmented bar */}
-                      <div className="mb-4 flex h-2.5 w-full overflow-hidden rounded-full bg-base">
+                      <div className="mb-4 flex h-2.5 w-full overflow-hidden border border-line bg-base">
                         {s.difficulties.map((d) => (
                           <div
                             key={d.id}
@@ -340,7 +337,7 @@ export default function PracticeWizard() {
                       <div className="space-y-2">
                         {s.difficulties.map((d) => (
                           <div key={d.id} className="flex items-center gap-3">
-                            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: DIFF_COLOR[d.id] }} />
+                            <span className="h-2.5 w-2.5 shrink-0" style={{ background: DIFF_COLOR[d.id] }} />
                             <span className="flex-1 text-sm text-ink">{DIFF_LABEL[d.id]}</span>
                             <Stepper
                               value={d.percent}
@@ -385,7 +382,7 @@ export default function PracticeWizard() {
                         key={p}
                         type="button"
                         onClick={() => setCount(p)}
-                        className={`rounded-lg border px-4 py-2 font-mono text-sm transition-colors ${
+                        className={`border px-4 py-2 font-mono text-sm transition-colors ${
                           s.questionCount === p
                             ? "border-mint bg-mint/15 text-mint"
                             : "border-line bg-base/60 text-ink-dim hover:border-mint/40 hover:text-ink"
@@ -406,7 +403,7 @@ export default function PracticeWizard() {
               {s.step === 6 && (
                 <div>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-xl border border-line bg-base p-4">
+                    <div className="border border-line bg-base p-4">
                       <Badge color="mint">{SOURCE_LABELS.vcaa.title}</Badge>
                       <p className="mt-2 mb-4 text-xs leading-snug text-ink-dim">{SOURCE_LABELS.vcaa.blurb}</p>
                       <Stepper
@@ -418,7 +415,7 @@ export default function PracticeWizard() {
                         }
                       />
                     </div>
-                    <div className="rounded-xl border border-line bg-base p-4">
+                    <div className="border border-line bg-base p-4">
                       <Badge color="amber">{SOURCE_LABELS.modified.title}</Badge>
                       <p className="mt-2 mb-4 text-xs leading-snug text-ink-dim">{SOURCE_LABELS.modified.blurb}</p>
                       <Stepper

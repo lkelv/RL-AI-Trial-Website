@@ -60,7 +60,7 @@ export default function ClassroomDetail() {
       <div className="mx-auto w-full max-w-4xl px-6 py-8">
         {/* banner */}
         <div
-          className="rl-reveal relative overflow-hidden rounded-xl p-6"
+          className="rl-reveal relative overflow-hidden p-6"
           style={{ background: `color-mix(in srgb, ${c} 28%, var(--color-night))` }}
         >
           <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
@@ -89,12 +89,12 @@ export default function ClassroomDetail() {
             >
               {t.label}
               {t.id === "tasks" && cls.upcomingCount > 0 && (
-                <span className="ml-1.5 rounded bg-amber/20 px-1.5 py-0.5 font-mono text-[10px] text-amber">
+                <span className="ml-1.5 bg-amber/20 px-1.5 py-0.5 font-mono text-[10px] text-amber">
                   {cls.upcomingCount}
                 </span>
               )}
               {tab === t.id && (
-                <span className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-mint" />
+                <span className="absolute inset-x-3 -bottom-px h-0.5 bg-mint" />
               )}
             </button>
           ))}
@@ -107,7 +107,7 @@ export default function ClassroomDetail() {
               {announcements.map((a, i) => (
                 <div
                   key={a.id}
-                  className="rl-reveal rounded-xl border border-line bg-raised p-4"
+                  className="rl-reveal border border-line bg-raised p-4"
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
                   <div className="flex items-center gap-3">
@@ -125,7 +125,7 @@ export default function ClassroomDetail() {
                   </div>
                   <p className="mt-3 text-sm leading-relaxed text-ink-dim">{a.body}</p>
                   {a.attachment && (
-                    <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-line bg-base/60 px-3 py-2 text-sm text-ink-dim">
+                    <div className="mt-3 inline-flex items-center gap-2 border border-line bg-base px-3 py-2 text-sm text-ink-dim">
                       <IconFile size={16} className="text-mint" />
                       {a.attachment.name}
                     </div>
@@ -142,10 +142,10 @@ export default function ClassroomDetail() {
                 return (
                   <div
                     key={t.id}
-                    className="rl-reveal flex items-center gap-4 rounded-xl border border-line bg-raised p-4"
+                    className="rl-reveal flex items-center gap-4 border border-line bg-raised p-4"
                     style={{ animationDelay: `${i * 50}ms` }}
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-base/60 text-mint">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center text-mint">
                       <IconTest size={20} />
                     </span>
                     <div className="min-w-0 flex-1">
@@ -172,17 +172,17 @@ export default function ClassroomDetail() {
                   key={f.id}
                   href={f.href ?? "#"}
                   onClick={(e) => !f.href && e.preventDefault()}
-                  className="rl-reveal flex items-center gap-3 rounded-xl border border-line bg-raised p-3 transition-colors hover:border-mint/40"
+                  className="rl-reveal flex items-center gap-3 border border-line bg-raised p-3 transition-colors hover:border-mint/40"
                   style={{ animationDelay: `${i * 40}ms` }}
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-base/60 text-mint">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center text-mint">
                     <FileIcon kind={f.kind} />
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-sm font-medium text-ink">{f.name}</div>
                     {f.meta && <div className="text-xs text-ink-faint">{f.meta}</div>}
                   </div>
-                  <span className="text-xs text-ink-faint uppercase">{f.kind}</span>
+                  <span className="font-mono text-xs text-ink-faint">{f.kind}</span>
                 </a>
               ))}
             </div>
@@ -196,7 +196,7 @@ export default function ClassroomDetail() {
                 </h3>
                 <div className="space-y-2">
                   {teachers.map((p) => (
-                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line bg-raised p-3">
+                    <div key={p.id} className="flex items-center gap-3 border border-line bg-raised p-3">
                       <Avatar name={p.name} color={p.avatarColor} size={40} />
                       <div>
                         <div className="text-sm font-medium text-ink">{p.name}</div>
@@ -214,7 +214,7 @@ export default function ClassroomDetail() {
                 </h3>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {students.map((p) => (
-                    <div key={p.id} className="flex items-center gap-3 rounded-xl border border-line bg-raised p-3">
+                    <div key={p.id} className="flex items-center gap-3 border border-line bg-raised p-3">
                       <Avatar name={p.name} color={p.avatarColor} size={36} />
                       <span className="text-sm text-ink">{p.name}</span>
                       {p.id === user?.id && <Badge color="mint" className="ml-auto">You</Badge>}

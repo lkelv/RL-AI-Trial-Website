@@ -8,12 +8,12 @@ import {
   IconArrowRight,
   IconTeacher,
 } from "../../components/ui/Icons";
-import { ACCENT_COLOR, accentTint, stagger } from "../../lib/format";
+import { ACCENT_COLOR, stagger } from "../../lib/format";
 
 const VARIANTS = {
   teacher: {
     title: "Teacher Workspace",
-    kicker: "Tutor tools",
+    kicker: "tutor tools",
     icon: <IconTeacher size={26} />,
     accent: "amber" as AccentName,
     blurb:
@@ -27,7 +27,7 @@ const VARIANTS = {
   },
   admin: {
     title: "Admin Console",
-    kicker: "Platform operations",
+    kicker: "platform operations",
     icon: <IconAdmin size={26} />,
     accent: "mint" as AccentName,
     blurb:
@@ -58,19 +58,14 @@ export default function ComingSoon({ variant }: { variant: "teacher" | "admin" }
           {/* intro — left aligned, no hero centering */}
           <div>
             <div className="rl-reveal flex items-center gap-3" style={stagger(0)}>
-              <span
-                className="inline-flex h-12 w-12 items-center justify-center rounded-xl"
-                style={{ background: accentTint(v.accent, 16), color, border: `1px solid ${accentTint(v.accent, 34)}` }}
-              >
-                {v.icon}
-              </span>
+              <span style={{ color }}>{v.icon}</span>
               <Badge color="amber" dot>
                 In development
               </Badge>
             </div>
 
             <p
-              className="rl-reveal mt-7 font-mono text-xs uppercase tracking-[0.3em]"
+              className="rl-reveal mt-7 font-mono text-xs"
               style={{ color, ...stagger(1) }}
             >
               {v.kicker}
@@ -93,11 +88,9 @@ export default function ComingSoon({ variant }: { variant: "teacher" | "admin" }
           </div>
 
           {/* roadmap — a spec-sheet ledger of what's coming */}
-          <div className="rl-reveal overflow-hidden rounded-xl border border-line bg-raised" style={stagger(3)}>
+          <div className="rl-reveal overflow-hidden border border-line bg-raised" style={stagger(3)}>
             <div className="flex items-center justify-between border-b border-line px-5 py-3">
-              <span className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-ink-faint">
-                On the roadmap
-              </span>
+              <span className="font-mono text-[0.7rem] text-ink-faint">on the roadmap</span>
               <span className="font-mono text-[0.7rem] text-ink-faint">
                 {String(v.features.length).padStart(2, "0")} planned
               </span>

@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .DS_Store
+
+# Large raw video footage — the demo only serves the transcoded
+# public/videos/*.mp4 (committed). Keep the multi-GB ProRes source out of git.
+public/videos/*.source.mov

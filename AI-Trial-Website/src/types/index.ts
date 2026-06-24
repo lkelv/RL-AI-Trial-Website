@@ -219,9 +219,18 @@ export interface AskAiSuggestion {
   answer: AskAiAnswer;
 }
 
+/** A (faked) AI-generated video lesson the tutor "renders" in reply. */
+export interface AskAiVideo {
+  src: string; // served path, e.g. /videos/integration-exponential.mp4
+  label: string; // header label shown on the player
+  downloadName: string;
+  summary: string; // intro line shown above the player
+}
+
 export interface ChatMessage {
   id: string;
   role: "user" | "assistant";
   text?: string; // user message
   answer?: AskAiAnswer; // assistant structured answer
+  video?: AskAiVideo; // assistant rendered-video answer
 }

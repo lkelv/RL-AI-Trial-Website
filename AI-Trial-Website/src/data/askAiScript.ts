@@ -1,4 +1,4 @@
-import type { AskAiAnswer, AskAiSuggestion } from "../types";
+import type { AskAiAnswer, AskAiSuggestion, AskAiVideo } from "../types";
 
 /**
  * Pre-scripted Q&A for the (faked) "Ask AI" chat. Suggestion chips map to
@@ -78,6 +78,38 @@ export const ASK_AI_SUGGESTIONS: AskAiSuggestion[] = [
     },
   },
 ];
+
+/**
+ * The (faked) "render a worked video" path. Any question about integrating
+ * exponentials — typed freely or via the chip below — resolves to this single
+ * pre-made video, so the on-camera demo is deterministic.
+ */
+export const INTEGRATION_VIDEO: AskAiVideo = {
+  src: "/videos/integration-exponential.mp4",
+  label: "Integrating exponential functions — worked video",
+  downloadName: "RL-Integrating-Exponential-Functions.mp4",
+  summary:
+    "Great question — this one's clearest on a whiteboard, so I've put together a short worked video for you. It covers ∫eˣ dx, the ∫eᵏˣ dx rule, and a substitution example. Press play to watch.",
+};
+
+/** The 4th composer chip — sits alongside the three text-answer suggestions. */
+export const ASK_AI_VIDEO_SUGGESTION = {
+  id: "q-int-exp",
+  subject: "Integration · Exponentials",
+  question: "How do I integrate exponential functions",
+};
+
+/**
+ * Detect a free-typed question about integrating exponentials. Needs an
+ * integration cue AND an exponential cue, so unrelated questions don't trip it.
+ */
+export function isIntegrationExponentialQuery(text: string): boolean {
+  const t = text.toLowerCase();
+  const integration = /integ|antideriv|∫/.test(t);
+  // "exponen" (not bare "exp") so it won't fire on "explain", "example", etc.
+  const exponential = /exponen|e\^|eˣ|e to the/.test(t);
+  return integration && exponential;
+}
 
 export const FALLBACK_ANSWER: AskAiAnswer = {
   summary:

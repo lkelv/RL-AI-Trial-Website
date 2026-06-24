@@ -1,6 +1,6 @@
 /* ============================================================
    Shared types for the RL AI Tutoring demo.
-   (No runtime values here — all interfaces / string-literal unions,
+   (No runtime values here - all interfaces / string-literal unions,
    safe under verbatimModuleSyntax + erasableSyntaxOnly.)
    ============================================================ */
 
@@ -10,7 +10,7 @@ export type Role = "student" | "parent" | "teacher" | "admin";
 export interface Account {
   id: string;
   username: string;
-  password: string; // fake plaintext — DEMO ONLY
+  password: string; // fake plaintext - DEMO ONLY
   role: Role;
   displayName: string;
   avatarColor: AccentName;
@@ -31,7 +31,7 @@ export type SubjectFamily = "VCE" | "IB";
 export interface SubjectTopic {
   overall: string; // e.g. "Differentiation"
   subs: string[]; // e.g. ["Chain Rule", "Product Rule", ...]
-  unit?: number; // e.g. 3 or 4 — drives the "All Unit N topics" presets
+  unit?: number; // e.g. 3 or 4 - drives the "All Unit N topics" presets
 }
 
 export interface Subject {

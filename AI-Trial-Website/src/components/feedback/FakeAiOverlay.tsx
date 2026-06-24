@@ -37,18 +37,12 @@ export function FakeAiOverlay({
   const progress = ((active + 1) / phases.length) * 100;
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center rounded-[inherit] bg-night/80 p-6 backdrop-blur-md rl-fade-in">
+    <div className="absolute inset-0 z-30 flex items-center justify-center rounded-[inherit] bg-night/95 p-6 rl-fade-in">
       <div className="w-full max-w-md text-center">
         <div className="relative mx-auto mb-6 h-20 w-20">
+          <div className="absolute inset-0 rounded-full border border-line" />
           <div
-            className="absolute inset-0 rounded-full"
-            style={{
-              background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
-              animation: "rl-pulse-glow 1.6s ease-in-out infinite",
-            }}
-          />
-          <div
-            className="absolute inset-1.5 rounded-full border border-dashed border-mint/40"
+            className="absolute inset-1.5 rounded-full border border-dashed border-mint/50"
             style={{ animation: "rl-spin 3.5s linear infinite" }}
           />
           <div className="absolute inset-0 flex items-center justify-center text-mint">
@@ -59,9 +53,9 @@ export function FakeAiOverlay({
         <h3 className="font-display text-xl text-ink">{title}</h3>
         {subtitle && <p className="mt-1 text-sm text-ink-dim">{subtitle}</p>}
 
-        <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-raised">
+        <div className="mt-5 h-1.5 w-full overflow-hidden border border-line bg-raised">
           <div
-            className="h-full rounded-full bg-mint transition-[width] duration-500 ease-out"
+            className="h-full bg-mint transition-[width] duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -78,7 +72,7 @@ export function FakeAiOverlay({
                 }`}
               >
                 <span
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center border ${
                     done
                       ? "border-mint/60 bg-mint/15 text-mint"
                       : cur
@@ -90,7 +84,7 @@ export function FakeAiOverlay({
                     <IconCheck size={12} />
                   ) : cur ? (
                     <span
-                      className="h-1.5 w-1.5 rounded-full bg-mint"
+                      className="h-1.5 w-1.5 bg-mint"
                       style={{ animation: "rl-pulse-glow 1s ease-in-out infinite" }}
                     />
                   ) : null}

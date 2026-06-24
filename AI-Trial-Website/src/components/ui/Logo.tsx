@@ -10,7 +10,7 @@ export function Logo({ size = 55, className = "" }: LogoProps) {
   return (
     <img
       src={logoUrl}
-      alt="RL Black Magic — AI Tutoring"
+      alt="RL Black Magic · AI Tutoring"
       height={size}
       style={{ height: size }}
       className={`inline-block w-auto shrink-0 ${className}`}

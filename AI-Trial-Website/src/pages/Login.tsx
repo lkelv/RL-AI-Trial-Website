@@ -59,7 +59,7 @@ export default function Login() {
   return (
     <div className="grid min-h-[100dvh] lg:grid-cols-2">
       {/* brand panel */}
-      <div className="relative hidden flex-col justify-between overflow-hidden border-r border-line/60 bg-base/40 p-10 lg:flex">
+      <div className="relative hidden flex-col justify-between overflow-hidden border-r border-line bg-base p-10 lg:flex">
         <Link to="/" className="relative z-10 transition-opacity hover:opacity-80">
           <Logo />
         </Link>
@@ -70,7 +70,7 @@ export default function Login() {
             <span className="text-mint">{ROLE_COPY[requestedRole] ?? "RL portal"}</span>
           </h2>
           <p className="mt-4 text-ink-dim">
-            One login for everything RL — practice, marking, classrooms and live
+            One login for everything RL: practice, marking, classrooms and live
             progress.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Login() {
                 key={acc.id}
                 type="button"
                 onClick={() => enter(acc)}
-                className="rl-reveal group flex w-full items-center gap-3 rounded-xl border border-line/70 bg-raised/40 p-3 text-left transition-all hover:-translate-y-0.5 hover:border-mint/50 hover:bg-raised/70"
+                className="rl-reveal group flex w-full items-center gap-3 border border-line bg-raised p-3 text-left transition-colors hover:border-mint hover:bg-raised-2"
                 style={{ animationDelay: `${120 + i * 80}ms` }}
               >
                 <Avatar name={acc.displayName} color={acc.avatarColor} size={42} />
@@ -148,7 +148,7 @@ export default function Login() {
                   setError("");
                 }}
                 autoComplete="username"
-                className="w-full rounded-xl border border-line bg-base/60 px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+                className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
                 placeholder="aisha"
               />
             </div>
@@ -165,13 +165,13 @@ export default function Login() {
                   setError("");
                 }}
                 autoComplete="current-password"
-                className="w-full rounded-xl border border-line bg-base/60 px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
+                className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
                 placeholder="demo"
               />
             </div>
 
             {error && (
-              <p className="rounded-lg border border-danger/40 bg-danger/10 px-3 py-2 text-xs text-danger">
+              <p className="border border-danger/40 bg-danger/10 px-3 py-2 text-xs text-danger">
                 {error}
               </p>
             )}

@@ -101,7 +101,7 @@
       "id": "log-4",
       "kind": "praise",
       "title": "Tutor commendation",
-      "detail": "David Tran noted excellent improvement in vectors — Aisha helped two peers during the session.",
+      "detail": "David Tran noted excellent improvement in vectors. Aisha helped two peers during the session.",
       "timeLabel": "Mon · 9:30am",
       "severity": "good"
     },
@@ -149,7 +149,7 @@
       "id": "log-10",
       "kind": "announcement",
       "title": "Term 2 invoice paid",
-      "detail": "Payment received — receipt #RL-20416 has been emailed to you. Thank you.",
+      "detail": "Payment received. Receipt #RL-20416 has been emailed to you. Thank you.",
       "timeLabel": "Last Wed · 1:20pm",
       "severity": "info"
     },

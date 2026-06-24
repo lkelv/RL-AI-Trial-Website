@@ -12,7 +12,7 @@ interface BadgeProps {
 export function Badge({ children, color = "mint", className = "", dot = false }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 font-mono text-[0.7rem] font-medium ${className}`}
       style={{
         background: accentTint(color, 14),
         color: ACCENT_COLOR[color],
@@ -21,7 +21,7 @@ export function Badge({ children, color = "mint", className = "", dot = false }:
     >
       {dot && (
         <span
-          className="h-1.5 w-1.5 rounded-full"
+          className="h-1.5 w-1.5"
           style={{ background: ACCENT_COLOR[color] }}
         />
       )}

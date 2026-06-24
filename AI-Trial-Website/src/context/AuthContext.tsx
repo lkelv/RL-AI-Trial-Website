@@ -54,7 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
     } catch {
-      /* storage unavailable — session stays in memory only */
+      /* storage unavailable - session stays in memory only */
     }
     return session;
   }, []);

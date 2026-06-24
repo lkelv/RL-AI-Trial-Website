@@ -5,7 +5,7 @@ import { useAuth } from "../../../context/AuthContext";
 import { AppShell } from "../../../components/layout/AppShell";
 import { Avatar } from "../../../components/ui/Avatar";
 import { BannerPattern } from "../../../components/ui/BannerPattern";
-import { IconClassroom, IconFile, IconTest } from "../../../components/ui/Icons";
+import { IconFile, IconTest } from "../../../components/ui/Icons";
 import { ACCENT_COLOR, stagger } from "../../../lib/format";
 
 function ClassCard({ cls }: { cls: ClassRoom }) {
@@ -13,7 +13,7 @@ function ClassCard({ cls }: { cls: ClassRoom }) {
   return (
     <Link
       to={`/student/classroom/${cls.id}`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line/70 bg-raised/45 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40"
+      className="group flex h-full flex-col overflow-hidden border border-line bg-raised transition-colors duration-150 hover:border-mint"
     >
       {/* banner */}
       <div
@@ -22,7 +22,7 @@ function ClassCard({ cls }: { cls: ClassRoom }) {
       >
         <BannerPattern pattern={cls.bannerPattern} color={cls.themeColor} />
         <div className="relative">
-          <h3 className="font-display text-xl text-ink drop-shadow">{cls.name}</h3>
+          <h3 className="font-display text-xl text-ink">{cls.name}</h3>
           <p className="text-xs text-ink/80">{cls.section}</p>
         </div>
         <div className="absolute -bottom-5 right-4">
@@ -58,16 +58,11 @@ export default function ClassroomList() {
   return (
     <AppShell back={{ to: "/student", label: "Student home" }}>
       <div className="mx-auto w-full max-w-5xl px-6 py-10 @container">
-        <div className="rl-reveal flex items-center gap-3" style={stagger(0)}>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-info/15 text-info">
-            <IconClassroom size={24} />
-          </span>
-          <div>
-            <h1 className="text-3xl text-ink sm:text-4xl">Classroom</h1>
-            <p className="text-sm text-ink-dim">
-              {myClasses.length} active {myClasses.length === 1 ? "class" : "classes"}
-            </p>
-          </div>
+        <div className="rl-reveal" style={stagger(0)}>
+          <h1 className="text-3xl text-ink sm:text-4xl">Classroom</h1>
+          <p className="mt-2 font-mono text-sm text-ink-dim">
+            {myClasses.length} active {myClasses.length === 1 ? "class" : "classes"}
+          </p>
         </div>
 
         <div className="mt-8 grid auto-rows-fr grid-cols-2 gap-5 @3xl:grid-cols-3">

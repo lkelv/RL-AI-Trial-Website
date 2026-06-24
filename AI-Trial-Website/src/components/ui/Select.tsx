@@ -11,7 +11,7 @@ export function Select({ label, className = "", children, ...props }: SelectProp
       {label && <span className="mb-1.5 block text-xs font-medium text-ink-dim">{label}</span>}
       <div className="relative">
         <select
-          className={`w-full cursor-pointer appearance-none rounded-xl border border-line bg-base/70 px-3.5 py-2.5 pr-10 text-sm text-ink outline-none transition-colors focus:border-mint/60 disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
+          className={`w-full cursor-pointer appearance-none border border-line bg-base px-3.5 py-2.5 pr-10 text-sm text-ink outline-none transition-colors focus:border-mint/60 disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
           {...props}
         >
           {children}

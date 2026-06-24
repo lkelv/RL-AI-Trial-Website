@@ -11,7 +11,7 @@ interface AvatarProps {
 export function Avatar({ name, color = "mint", size = 40, className = "" }: AvatarProps) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-full font-semibold ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center font-mono font-semibold ${className}`}
       style={{
         width: size,
         height: size,

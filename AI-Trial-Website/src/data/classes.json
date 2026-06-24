@@ -26,7 +26,7 @@
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Yesterday · 6:12pm",
-        "body": "Reminder: tomorrow we cover the Chain Rule and Tangent/Normal problems. Bring your Exam 1 booklet — we'll do timed short-answer practice."
+        "body": "Reminder: tomorrow we cover the Chain Rule and Tangent/Normal problems. Bring your Exam 1 booklet. We'll do timed short-answer practice."
       },
       {
         "id": "mm-a3",
@@ -41,14 +41,14 @@
       {
         "id": "mm-t1",
         "title": "Differentiation diagnostic (Exam 1)",
-        "detail": "6 short-answer questions — first principles, chain & product rule.",
+        "detail": "6 short-answer questions: first principles, chain & product rule.",
         "dueLabel": "Due Tue, 4:30pm",
         "status": "assigned",
         "points": 30
       },
       {
         "id": "mm-t2",
-        "title": "Worksheet 4B — Tangent & Normal",
+        "title": "Worksheet 4B · Tangent & Normal",
         "detail": "Q1–Q9, show full working.",
         "dueLabel": "Due Thu",
         "status": "submitted",
@@ -64,7 +64,7 @@
       },
       {
         "id": "mm-t4",
-        "title": "Chapter 3 review — Circular Functions",
+        "title": "Chapter 3 review · Circular Functions",
         "dueLabel": "Was due last Fri",
         "status": "missing",
         "points": 20
@@ -72,10 +72,10 @@
     ],
     "files": [
       { "id": "mm-f1", "name": "Term2-Overview.pdf", "kind": "pdf", "meta": "PDF · 240 KB" },
-      { "id": "mm-f2", "name": "Differentiation — Formula Sheet.pdf", "kind": "pdf", "meta": "PDF · 180 KB" },
-      { "id": "mm-f3", "name": "Chain Rule — worked examples.slides", "kind": "slides", "meta": "24 slides" },
+      { "id": "mm-f2", "name": "Differentiation · Formula Sheet.pdf", "kind": "pdf", "meta": "PDF · 180 KB" },
+      { "id": "mm-f3", "name": "Chain Rule · worked examples.slides", "kind": "slides", "meta": "24 slides" },
       { "id": "mm-f4", "name": "Exam 1 booklet (2023 VCAA).pdf", "kind": "pdf", "meta": "PDF · 1.2 MB" },
-      { "id": "mm-f5", "name": "Desmos — gradient explorer", "kind": "link", "meta": "External link" }
+      { "id": "mm-f5", "name": "Desmos · gradient explorer", "kind": "link", "meta": "External link" }
     ],
     "people": [
       { "id": "p-dt", "name": "David Tran", "role": "teacher", "avatarColor": "amber", "email": "david@rlblackmagic.com" },
@@ -113,13 +113,13 @@
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Wed · 5:01pm",
-        "body": "Great work on vectors last week — class average was 84%. Solutions are now in Files."
+        "body": "Great work on vectors last week. Class average was 84%. Solutions are now in Files."
       }
     ],
     "tasks": [
       {
         "id": "sm-t1",
-        "title": "Complex Numbers — SAC practice",
+        "title": "Complex Numbers · SAC practice",
         "detail": "De Moivre's theorem, polar form, loci.",
         "dueLabel": "Due Thu",
         "status": "assigned",
@@ -135,15 +135,15 @@
       },
       {
         "id": "sm-t3",
-        "title": "Mechanics — projectile worksheet",
+        "title": "Mechanics · projectile worksheet",
         "dueLabel": "Due next week",
         "status": "assigned",
         "points": 25
       }
     ],
     "files": [
-      { "id": "sm-f1", "name": "Complex Numbers — notes.pdf", "kind": "pdf", "meta": "PDF · 320 KB" },
-      { "id": "sm-f2", "name": "Vectors SAC — solutions.pdf", "kind": "pdf", "meta": "PDF · 410 KB" },
+      { "id": "sm-f1", "name": "Complex Numbers · notes.pdf", "kind": "pdf", "meta": "PDF · 320 KB" },
+      { "id": "sm-f2", "name": "Vectors SAC · solutions.pdf", "kind": "pdf", "meta": "PDF · 410 KB" },
       { "id": "sm-f3", "name": "Argand plane regions.slides", "kind": "slides", "meta": "18 slides" }
     ],
     "people": [
@@ -194,7 +194,7 @@
     "tasks": [
       {
         "id": "ib-t1",
-        "title": "Paper 3 investigation — draft",
+        "title": "Paper 3 investigation · draft",
         "detail": "Tech Active. 1200–1500 words with GDC evidence.",
         "dueLabel": "Due Sat, 10:00am",
         "status": "assigned",
@@ -202,7 +202,7 @@
       },
       {
         "id": "ib-t2",
-        "title": "Maclaurin series — Tech Free drill",
+        "title": "Maclaurin series · Tech Free drill",
         "dueLabel": "Due Mon",
         "status": "assigned",
         "points": 20
@@ -216,7 +216,7 @@
       },
       {
         "id": "ib-t4",
-        "title": "Vectors — lines & planes test",
+        "title": "Vectors · lines & planes test",
         "dueLabel": "Returned",
         "status": "graded",
         "points": 40,
@@ -224,8 +224,8 @@
       }
     ],
     "files": [
-      { "id": "ib-f1", "name": "Paper 3 — investigation brief.pdf", "kind": "pdf", "meta": "PDF · 290 KB" },
-      { "id": "ib-f2", "name": "Maclaurin series — Tech Free drill.pdf", "kind": "pdf", "meta": "PDF · 150 KB" },
+      { "id": "ib-f1", "name": "Paper 3 · investigation brief.pdf", "kind": "pdf", "meta": "PDF · 290 KB" },
+      { "id": "ib-f2", "name": "Maclaurin series · Tech Free drill.pdf", "kind": "pdf", "meta": "PDF · 150 KB" },
       { "id": "ib-f3", "name": "Formula booklet (IB AA HL).pdf", "kind": "pdf", "meta": "PDF · 2.1 MB" },
       { "id": "ib-f4", "name": "GDC walkthrough.video", "kind": "video", "meta": "12 min" }
     ],

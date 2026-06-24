@@ -19,7 +19,7 @@ export const getClass = (id: string | undefined): ClassRoom | undefined =>
   CLASSES.find((c) => c.id === id);
 
 /* Premade PDF outputs (live in /public/pdfs). The same files are returned
-   regardless of selection — the demo outcome is fixed and bulletproof. */
+   regardless of selection - the demo outcome is fixed and bulletproof. */
 export const PRACTICE_PDFS: PracticePdf[] = [
   {
     label: "Question Paper",

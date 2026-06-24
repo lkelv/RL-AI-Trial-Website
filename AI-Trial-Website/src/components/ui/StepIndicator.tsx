@@ -23,7 +23,7 @@ export function StepIndicator({ steps, current, onStepClick }: StepIndicatorProp
               className={`group flex items-center gap-2 ${clickable ? "cursor-pointer" : "cursor-default"}`}
             >
               <span
-                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold font-mono transition-colors ${
+                className={`flex h-7 w-7 shrink-0 items-center justify-center border text-xs font-semibold font-mono transition-colors ${
                   done
                     ? "border-mint/60 bg-mint/15 text-mint"
                     : active
@@ -43,7 +43,7 @@ export function StepIndicator({ steps, current, onStepClick }: StepIndicatorProp
             </button>
             {n < steps.length && (
               <span
-                className={`h-px flex-1 rounded transition-colors ${
+                className={`h-px flex-1 transition-colors ${
                   done ? "bg-mint/50" : "bg-line"
                 }`}
               />

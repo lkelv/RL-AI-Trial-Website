@@ -6,6 +6,13 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "AI-Trial-Website", "run", "dev", "--", "--port", "5173", "--strictPort"],
       "port": 5173
+    },
+    {
+      "name": "preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "AI-Trial-Website", "run", "dev", "--", "--port", "5199", "--strictPort"],
+      "port": 5199,
+      "autoPort": false
     }
   ]
 }

@@ -47,4 +47,10 @@ export {
   QUESTION_COUNT_PRESETS,
   SOURCE_LABELS,
 } from "./practiceOptions";
-export { ASK_AI_SUGGESTIONS, FALLBACK_ANSWER } from "./askAiScript";
+export {
+  ASK_AI_SUGGESTIONS,
+  ASK_AI_VIDEO_SUGGESTION,
+  FALLBACK_ANSWER,
+  INTEGRATION_VIDEO,
+  isIntegrationExponentialQuery,
+} from "./askAiScript";

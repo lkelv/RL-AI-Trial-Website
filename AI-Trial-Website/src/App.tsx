@@ -7,6 +7,7 @@ import StudentHome from "./pages/student/StudentHome";
 import AiFeaturesHub from "./pages/student/AiFeaturesHub";
 import PracticeWizard from "./pages/student/practice/PracticeWizard";
 import AiMarking from "./pages/student/AiMarking";
+import ErrorBooklet from "./pages/student/ErrorBooklet";
 import AskAi from "./pages/student/AskAi";
 import ClassroomList from "./pages/student/classroom/ClassroomList";
 import ClassroomDetail from "./pages/student/classroom/ClassroomDetail";
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/student/ai" element={<StudentRoute><AiFeaturesHub /></StudentRoute>} />
         <Route path="/student/ai/practice" element={<StudentRoute><PracticeWizard /></StudentRoute>} />
         <Route path="/student/ai/marking" element={<StudentRoute><AiMarking /></StudentRoute>} />
+        <Route path="/student/ai/errors" element={<StudentRoute><ErrorBooklet /></StudentRoute>} />
         <Route path="/student/ai/ask" element={<StudentRoute><AskAi /></StudentRoute>} />
         <Route path="/student/classroom" element={<StudentRoute><ClassroomList /></StudentRoute>} />
         <Route

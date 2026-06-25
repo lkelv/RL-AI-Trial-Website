@@ -40,6 +40,7 @@ export const MARKED_PDF = {
   downloadName: "RL-AI-Marked-Paper.pdf",
 };
 
+export { ERROR_QUESTIONS } from "./errorBooklet";
 export { SUBJECTS, getSubject } from "./subjects";
 export {
   DIFFICULTIES,

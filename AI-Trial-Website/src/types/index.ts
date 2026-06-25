@@ -200,6 +200,20 @@ export interface ParentDashboardData {
   log: LogEntry[];
 }
 
+/* ---------- Error data booklet ---------- */
+/** A question the student previously got wrong (in theory harvested from the
+ *  AI Marking page), surfaced here so they can reattempt it. */
+export interface ErrorQuestion {
+  id: string;
+  subject: string; // "Methods 3 & 4"
+  topic: string; // overall topic, e.g. "Differentiation"
+  subTopic: string; // e.g. "Chain Rule"
+  source: string; // provenance label, e.g. "AI Marking · 14 Jun"
+  prompt: string; // the question text (plain notation, no KaTeX)
+  marksLabel: string; // e.g. "1 / 3 marks"
+  yourError: string; // short note on what went wrong first time
+}
+
 /* ---------- Ask AI (fake chat) ---------- */
 export interface AskAiStep {
   title: string;

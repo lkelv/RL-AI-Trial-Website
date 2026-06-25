@@ -95,7 +95,7 @@ export function LineChart({ data, className = "" }: { data: ParentChart; classNa
             {/* x labels */}
             {data.xLabels.map((lab, i) => (
               <text
-                key={lab}
+                key={i}
                 x={x(i)}
                 y={h - 8}
                 textAnchor="middle"

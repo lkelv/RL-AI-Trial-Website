@@ -27,6 +27,13 @@ const FEATURES: {
     accent: "amber",
   },
   {
+    title: "Error Data Booklet",
+    description:
+      "Every question you got wrong, collected automatically from your marked papers, ready to reattempt and master.",
+    to: "/student/ai/errors",
+    accent: "pine",
+  },
+  {
     title: "Ask the Tutor",
     description:
       "Stuck on a problem? Ask the AI tutor and get a clear, step-by-step worked answer.",

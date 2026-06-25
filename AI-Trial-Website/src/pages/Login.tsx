@@ -34,7 +34,7 @@ export default function Login() {
   );
 
   const [username, setUsername] = useState(presetAccount?.username ?? "");
-  const [password, setPassword] = useState(presetAccount ? "demo" : "");
+  const [password, setPassword] = useState(presetAccount?.password ?? "");
   const [error, setError] = useState("");
 
   const quickAccounts = QUICK_ROLES.map((r) => ACCOUNTS.find((a) => a.role === r)).filter(
@@ -149,7 +149,7 @@ export default function Login() {
                 }}
                 autoComplete="username"
                 className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
-                placeholder="aisha"
+                placeholder="rlstaff"
               />
             </div>
             <div>
@@ -166,7 +166,7 @@ export default function Login() {
                 }}
                 autoComplete="current-password"
                 className="w-full border border-line bg-base px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-mint/60"
-                placeholder="demo"
+                placeholder="rlstaff"
               />
             </div>
 

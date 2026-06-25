@@ -1,32 +1,71 @@
 [
   {
     "id": "u-student-1",
-    "username": "aisha",
-    "password": "demo",
+    "username": "rlstaff",
+    "password": "rlstaff",
     "role": "student",
-    "displayName": "Aisha Nguyen",
+    "displayName": "RL Staff",
     "avatarColor": "mint",
     "tagline": "Year 12 · Methods & Specialist",
     "enrolledClassIds": ["mm34-a", "sm34-b", "ibhl-aa"]
   },
   {
-    "id": "u-parent-1",
-    "username": "linh",
-    "password": "demo",
-    "role": "parent",
-    "displayName": "Linh Nguyen",
+    "id": "u-student-2",
+    "username": "kelvin",
+    "password": "kelvin",
+    "role": "student",
+    "displayName": "Kelvin",
+    "avatarColor": "amber",
+    "tagline": "Year 12 · Methods & Specialist",
+    "enrolledClassIds": ["mm34-a", "sm34-b", "ibhl-aa"]
+  },
+  {
+    "id": "u-student-3",
+    "username": "alan",
+    "password": "alan",
+    "role": "student",
+    "displayName": "Alan",
     "avatarColor": "info",
-    "tagline": "Parent of Aisha Nguyen",
-    "childStudentName": "Aisha Nguyen"
+    "tagline": "Year 12 · Methods & Specialist",
+    "enrolledClassIds": ["mm34-a", "sm34-b", "ibhl-aa"]
+  },
+  {
+    "id": "u-student-4",
+    "username": "tom",
+    "password": "tom",
+    "role": "student",
+    "displayName": "Tom",
+    "avatarColor": "pine",
+    "tagline": "Year 12 · Methods & Specialist",
+    "enrolledClassIds": ["mm34-a", "sm34-b", "ibhl-aa"]
+  },
+  {
+    "id": "u-parent-1",
+    "username": "ricky",
+    "password": "ricky",
+    "role": "parent",
+    "displayName": "Ricky Liu",
+    "avatarColor": "info",
+    "tagline": "Parent of RL Staff",
+    "childStudentName": "RL Staff"
   },
   {
     "id": "u-teacher-1",
-    "username": "david",
-    "password": "demo",
+    "username": "jali",
+    "password": "jali",
     "role": "teacher",
-    "displayName": "David Tran",
+    "displayName": "Jali",
     "avatarColor": "amber",
-    "tagline": "Mathematics tutor"
+    "tagline": "Mathematics tutor · Methods & Specialist"
+  },
+  {
+    "id": "u-teacher-2",
+    "username": "grace",
+    "password": "grace",
+    "role": "teacher",
+    "displayName": "Grace",
+    "avatarColor": "info",
+    "tagline": "Mathematics tutor · IB AA HL"
   },
   {
     "id": "u-admin-1",

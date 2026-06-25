@@ -7,6 +7,7 @@ import {
   INTEGRATION_VIDEO,
   isIntegrationExponentialQuery,
 } from "../../data";
+import { useAuth } from "../../context/AuthContext";
 import { AppShell } from "../../components/layout/AppShell";
 import { TypingDots } from "../../components/feedback/TypingDots";
 import { VideoPlayer } from "../../components/video/VideoPlayer";
@@ -51,11 +52,12 @@ function AnswerBubble({ answer }: { answer: AskAiAnswer }) {
 }
 
 export default function AskAi() {
+  const { user } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: nextId(),
       role: "assistant",
-      text: "Hi Aisha 👋 I'm your RL AI tutor. Ask me any maths question, or try one of the examples below — I'll walk you through it step by step, or put together a short worked video.",
+      text: `Hi ${user?.displayName ?? "there"} 👋 I'm your RL AI tutor. Ask me any maths question, or try one of the examples below — I'll walk you through it step by step, or put together a short worked video.`,
     },
   ]);
   const [input, setInput] = useState("");

@@ -7,12 +7,12 @@
     "room": "Online · Tue 4:30pm",
     "themeColor": "mint",
     "bannerPattern": "grid",
-    "teacherName": "David Tran",
+    "teacherName": "Jali",
     "upcomingCount": 2,
     "announcements": [
       {
         "id": "mm-a1",
-        "authorName": "David Tran",
+        "authorName": "Jali",
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Today · 8:05am",
@@ -22,7 +22,7 @@
       },
       {
         "id": "mm-a2",
-        "authorName": "David Tran",
+        "authorName": "Jali",
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Yesterday · 6:12pm",
@@ -78,8 +78,11 @@
       { "id": "mm-f5", "name": "Desmos · gradient explorer", "kind": "link", "meta": "External link" }
     ],
     "people": [
-      { "id": "p-dt", "name": "David Tran", "role": "teacher", "avatarColor": "amber", "email": "david@rlblackmagic.com" },
-      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-jali", "name": "Jali", "role": "teacher", "avatarColor": "amber", "email": "jali@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "RL Staff", "role": "student", "avatarColor": "mint" },
+      { "id": "u-student-2", "name": "Kelvin", "role": "student", "avatarColor": "amber" },
+      { "id": "u-student-3", "name": "Alan", "role": "student", "avatarColor": "info" },
+      { "id": "u-student-4", "name": "Tom", "role": "student", "avatarColor": "pine" },
       { "id": "p-s2", "name": "Marcus Lee", "role": "student", "avatarColor": "info" },
       { "id": "p-s3", "name": "Priya Patel", "role": "student", "avatarColor": "pine" },
       { "id": "p-s4", "name": "Ethan Wright", "role": "student", "avatarColor": "amber" },
@@ -95,12 +98,12 @@
     "room": "Online · Thu 5:30pm",
     "themeColor": "amber",
     "bannerPattern": "waves",
-    "teacherName": "David Tran",
+    "teacherName": "Jali",
     "upcomingCount": 1,
     "announcements": [
       {
         "id": "sm-a1",
-        "authorName": "David Tran",
+        "authorName": "Jali",
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Today · 7:40am",
@@ -109,7 +112,7 @@
       },
       {
         "id": "sm-a2",
-        "authorName": "David Tran",
+        "authorName": "Jali",
         "authorRole": "teacher",
         "authorColor": "amber",
         "postedAt": "Wed · 5:01pm",
@@ -147,8 +150,11 @@
       { "id": "sm-f3", "name": "Argand plane regions.slides", "kind": "slides", "meta": "18 slides" }
     ],
     "people": [
-      { "id": "p-dt", "name": "David Tran", "role": "teacher", "avatarColor": "amber", "email": "david@rlblackmagic.com" },
-      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-jali", "name": "Jali", "role": "teacher", "avatarColor": "amber", "email": "jali@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "RL Staff", "role": "student", "avatarColor": "mint" },
+      { "id": "u-student-2", "name": "Kelvin", "role": "student", "avatarColor": "amber" },
+      { "id": "u-student-3", "name": "Alan", "role": "student", "avatarColor": "info" },
+      { "id": "u-student-4", "name": "Tom", "role": "student", "avatarColor": "pine" },
       { "id": "p-s7", "name": "Hannah Cole", "role": "student", "avatarColor": "pine" },
       { "id": "p-s8", "name": "Liam Foster", "role": "student", "avatarColor": "info" },
       { "id": "p-s9", "name": "Olivia Tran", "role": "student", "avatarColor": "amber" }
@@ -162,12 +168,12 @@
     "room": "Online · Sat 10:00am",
     "themeColor": "info",
     "bannerPattern": "rings",
-    "teacherName": "Priya Sharma",
+    "teacherName": "Grace",
     "upcomingCount": 3,
     "announcements": [
       {
         "id": "ib-a1",
-        "authorName": "Priya Sharma",
+        "authorName": "Grace",
         "authorRole": "teacher",
         "authorColor": "info",
         "postedAt": "Today · 9:15am",
@@ -176,7 +182,7 @@
       },
       {
         "id": "ib-a2",
-        "authorName": "Priya Sharma",
+        "authorName": "Grace",
         "authorRole": "teacher",
         "authorColor": "info",
         "postedAt": "Fri · 2:20pm",
@@ -230,8 +236,11 @@
       { "id": "ib-f4", "name": "GDC walkthrough.video", "kind": "video", "meta": "12 min" }
     ],
     "people": [
-      { "id": "p-ps", "name": "Priya Sharma", "role": "teacher", "avatarColor": "info", "email": "priya@rlblackmagic.com" },
-      { "id": "u-student-1", "name": "Aisha Nguyen", "role": "student", "avatarColor": "mint" },
+      { "id": "p-grace", "name": "Grace", "role": "teacher", "avatarColor": "info", "email": "grace@rlblackmagic.com" },
+      { "id": "u-student-1", "name": "RL Staff", "role": "student", "avatarColor": "mint" },
+      { "id": "u-student-2", "name": "Kelvin", "role": "student", "avatarColor": "amber" },
+      { "id": "u-student-3", "name": "Alan", "role": "student", "avatarColor": "info" },
+      { "id": "u-student-4", "name": "Tom", "role": "student", "avatarColor": "pine" },
       { "id": "p-s10", "name": "Noah Bennett", "role": "student", "avatarColor": "amber" },
       { "id": "p-s11", "name": "Mia Zhang", "role": "student", "avatarColor": "pine" },
       { "id": "p-s12", "name": "Lucas Romano", "role": "student", "avatarColor": "mint" }

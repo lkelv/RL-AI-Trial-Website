@@ -1,5 +1,5 @@
 {
-  "studentName": "Aisha Nguyen",
+  "studentName": "RL Staff",
   "term": "Term 2 · 2026",
   "stats": [
     {
@@ -77,7 +77,7 @@
       "id": "log-1",
       "kind": "attendance",
       "title": "Missed class",
-      "detail": "Aisha was marked absent from Methods 3 & 4 (Group A) on Thursday. Please confirm if this was expected.",
+      "detail": "RL Staff was marked absent from Methods 3 & 4 (Group A) on Thursday. Please confirm if this was expected.",
       "timeLabel": "Today · 9:15am",
       "severity": "warn"
     },
@@ -101,7 +101,7 @@
       "id": "log-4",
       "kind": "praise",
       "title": "Tutor commendation",
-      "detail": "David Tran noted excellent improvement in vectors. Aisha helped two peers during the session.",
+      "detail": "Jali noted excellent improvement in vectors. RL Staff helped two peers during the session.",
       "timeLabel": "Mon · 9:30am",
       "severity": "good"
     },
@@ -157,7 +157,7 @@
       "id": "log-11",
       "kind": "attendance",
       "title": "Make-up session attended",
-      "detail": "Aisha attended the optional Saturday Integration workshop.",
+      "detail": "RL Staff attended the optional Saturday Integration workshop.",
       "timeLabel": "Last Sat · 11:30am",
       "severity": "good"
     },

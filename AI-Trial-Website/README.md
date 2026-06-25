@@ -18,14 +18,18 @@ npm run dev        # http://localhost:5173
 npm run build && npm run preview
 ```
 
-## Demo accounts (password is `demo` for all)
+## Demo accounts (password = username, except admin)
 
-| Role    | Username | One-click on the login screen |
-|---------|----------|-------------------------------|
-| Student | `aisha`  | "Aisha Nguyen"                |
-| Parent  | `linh`   | "Linh Nguyen"                 |
-| Teacher | `david`  | (lands on a "coming soon" page) |
-| Admin   | `admin`  | (lands on a "coming soon" page) |
+| Role    | Username  | Password  | One-click on the login screen   |
+|---------|-----------|-----------|---------------------------------|
+| Student | `rlstaff` | `rlstaff` | "RL Staff"                      |
+| Student | `kelvin`  | `kelvin`  | (manual sign-in)                |
+| Student | `alan`    | `alan`    | (manual sign-in)                |
+| Student | `tom`     | `tom`     | (manual sign-in)                |
+| Parent  | `ricky`   | `ricky`   | "Ricky Liu"                     |
+| Teacher | `jali`    | `jali`    | (lands on a "coming soon" page) |
+| Teacher | `grace`   | `grace`   | (lands on a "coming soon" page) |
+| Admin   | `admin`   | `demo`    | (lands on a "coming soon" page) |
 
 The front page has four portals — **Students** and **Parents** are fully built;
 **Teacher** and **Admin** are tasteful "in development" placeholders.

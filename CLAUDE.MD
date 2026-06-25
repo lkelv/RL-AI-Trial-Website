@@ -38,14 +38,21 @@ npm run dev                       # http://localhost:5173
 - Auth is fake: `context/AuthContext.tsx` matches `data/accounts.json` and persists
   to `localStorage`; `components/layout/RequireAuth.tsx` role-gates routes.
 
-## Demo accounts (password is `demo` for all)
+## Demo accounts (password = username, except admin which is `demo`)
 
-| role    | username | lands on                         |
-| ------- | -------- | -------------------------------- |
-| student | `aisha`  | full Student portal              |
-| parent  | `linh`   | Performance dashboard            |
-| teacher | `david`  | "in development" placeholder     |
-| admin   | `admin`  | "in development" placeholder     |
+| role    | username  | lands on                         |
+| ------- | --------- | -------------------------------- |
+| student | `rlstaff` | full Student portal              |
+| student | `kelvin`  | full Student portal              |
+| student | `alan`    | full Student portal              |
+| student | `tom`     | full Student portal              |
+| parent  | `ricky`   | Performance dashboard            |
+| teacher | `jali`    | "in development" placeholder     |
+| teacher | `grace`   | "in development" placeholder     |
+| admin   | `admin`   | "in development" placeholder     |
+
+The four students share the same (static) classes and dashboard data. Teachers
+**Jali** (Methods & Specialist) and **Grace** (IB AA HL) are the class teachers.
 
 Only **Student** and **Parent** are built. **Teacher** and **Admin** are deliberate
 "coming soon" pages (`pages/placeholder/ComingSoon.tsx`).

@@ -1,7 +1,14 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link } from "react-router-dom";
 
-export type ButtonVariant = "primary" | "amber" | "outline" | "ghost";
+export type ButtonVariant =
+  | "primary"
+  | "amber"
+  | "outline"
+  | "ghost"
+  | "mintSoft"
+  | "amberSoft"
+  | "infoSoft";
 export type ButtonSize = "sm" | "md" | "lg";
 
 const VARIANTS: Record<ButtonVariant, string> = {
@@ -12,6 +19,13 @@ const VARIANTS: Record<ButtonVariant, string> = {
   outline:
     "bg-raised text-ink border border-line hover:border-mint/50 hover:bg-raised-2",
   ghost: "bg-transparent text-ink-dim border border-transparent hover:text-ink hover:bg-raised",
+  // tinted accent buttons — flat surface, accent text + hairline, colour-flip hover
+  mintSoft:
+    "bg-mint/10 text-mint border border-mint/30 hover:bg-mint/20 hover:border-mint/55",
+  amberSoft:
+    "bg-amber/10 text-amber border border-amber/30 hover:bg-amber/20 hover:border-amber/55",
+  infoSoft:
+    "bg-info/10 text-info border border-info/30 hover:bg-info/20 hover:border-info/55",
 };
 
 const SIZES: Record<ButtonSize, string> = {

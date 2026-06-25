@@ -86,6 +86,16 @@ export interface PracticePdf {
   downloadName: string;
 }
 
+/** Seed passed via router state to pre-fill the practice wizard (e.g. from the
+ *  Error Data Booklet — subject / topic / difficulty inferred from a question
+ *  the student got wrong). `step` is the wizard step to land on. */
+export interface PracticePrefill {
+  subjectId: string;
+  topics: TopicSelection[];
+  difficulties: DifficultyMix[];
+  step?: number;
+}
+
 /* ---------- Classroom ---------- */
 export interface Person {
   id: string;
@@ -201,17 +211,23 @@ export interface ParentDashboardData {
 }
 
 /* ---------- Error data booklet ---------- */
+/** Why the student got the question wrong — tagged manually in the booklet. */
+export type ErrorType = "careless" | "knowledge-gap";
+
 /** A question the student previously got wrong (in theory harvested from the
  *  AI Marking page), surfaced here so they can reattempt it. */
 export interface ErrorQuestion {
   id: string;
-  subject: string; // "Methods 3 & 4"
+  subject: string; // "Methods 3 & 4" (display label)
+  subjectId: string; // matching Subject.id, e.g. "MM34" — drives practice prefill
   topic: string; // overall topic, e.g. "Differentiation"
   subTopic: string; // e.g. "Chain Rule"
+  difficulty: Difficulty; // inferred level — drives practice prefill
   source: string; // provenance label, e.g. "AI Marking · 14 Jun"
   prompt: string; // the question text (plain notation, no KaTeX)
   marksLabel: string; // e.g. "1 / 3 marks"
   yourError: string; // short note on what went wrong first time
+  attempt: string[]; // the student's working as captured in the AI snapshot
 }
 
 /* ---------- Ask AI (fake chat) ---------- */

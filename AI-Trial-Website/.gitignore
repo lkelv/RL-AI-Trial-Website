@@ -28,3 +28,10 @@ dist-ssr
 # Large raw video footage — the demo only serves the transcoded
 # public/videos/*.mp4 (committed). Keep the multi-GB ProRes source out of git.
 public/videos/*.source.mov
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example

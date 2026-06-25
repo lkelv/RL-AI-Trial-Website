@@ -1,8 +1,10 @@
 import { useReducer } from "react";
+import { useLocation } from "react-router-dom";
 import type {
   Difficulty,
   DifficultyMix,
   PaperType,
+  PracticePrefill,
   PracticeSelection,
 } from "../../../types";
 import {
@@ -117,6 +119,21 @@ const INITIAL: State = {
   modifiedCount: 3,
 };
 
+/** Seed the wizard from router state (e.g. the Error Data Booklet pre-selects
+ *  subject / topic / difficulty for the question the student got wrong). */
+function initState(routerState: unknown): State {
+  const prefill = (routerState as { practicePrefill?: PracticePrefill } | null)
+    ?.practicePrefill;
+  if (!prefill) return INITIAL;
+  return {
+    ...INITIAL,
+    subjectId: prefill.subjectId,
+    topics: prefill.topics,
+    difficulties: prefill.difficulties,
+    step: prefill.step ?? INITIAL.step,
+  };
+}
+
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "patch":
@@ -180,7 +197,8 @@ function Stepper({
 }
 
 export default function PracticeWizard() {
-  const [s, dispatch] = useReducer(reducer, INITIAL);
+  const location = useLocation();
+  const [s, dispatch] = useReducer(reducer, location.state, initState);
 
   const subject = getSubject(s.subjectId);
   const topics = subject?.topics ?? [];

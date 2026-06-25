@@ -183,6 +183,32 @@ export const IconChevronDown = (p: IconProps) => (
     <path d="m6 9 6 6 6-6" />
   </Base>
 );
+export const IconImage = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="3.5" y="4.5" width="17" height="15" rx="1.5" />
+    <circle cx="8.5" cy="9.5" r="1.6" />
+    <path d="m4 17 5-5 4 4 3-2.5 4 3.5" />
+  </Base>
+);
+export const IconTrash = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M4 6.5h16" />
+    <path d="M9 6.5V4h6v2.5" />
+    <path d="m6 6.5 1 13.5h10l1-13.5" />
+    <path d="M10 10.5v6M14 10.5v6" />
+  </Base>
+);
+export const IconTag = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M3 3.5h7.2L20 13.3l-6.7 6.7L3.5 10.7V3.5Z" />
+    <circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none" />
+  </Base>
+);
+export const IconFilter = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M3 5h18l-7 8v6l-4-2.5V13L3 5Z" />
+  </Base>
+);
 export const IconPin = (p: IconProps) => (
   <Base {...p}>
     <path d="M9 3.5h6l-1 5 3 3v2H7v-2l3-3-1-5Z" />

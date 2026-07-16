@@ -87,7 +87,7 @@ const STAT_TEMPLATE: StatTemplate[] = [
   { id: "hw-completion", label: "Homework Completion", unit: "%", accent: "pine", icon: "check", caption: "on-time rate", pick: (s) => s.completion },
   { id: "test-score", label: "Avg Test Score", unit: "%", accent: "amber", icon: "test", caption: "test average", pick: (s) => s.testScore },
   { id: "attendance", label: "Class Attendance", unit: "%", accent: "info", icon: "calendar", caption: "attendance", pick: (s) => s.attendance },
-  { id: "obedience", label: "Obedience Score", unit: "/10", accent: "mint", icon: "shield", caption: "tutor rated", pick: (s) => s.obedience },
+  { id: "obedience", label: "Class Performance Rate", unit: "/10", accent: "mint", icon: "shield", caption: "tutor rated", pick: (s) => s.obedience },
 ];
 
 const round = (n: number) => Math.round(n);
@@ -153,7 +153,7 @@ function buildChart(range: MonthSnapshot[]): ParentChart {
         unit: "%",
       },
       {
-        label: "Obedience",
+        label: "Class Performance",
         colorVar: "var(--color-mint)",
         points: obedience.map((v) => v * 10), // plot on 0–100
         displayPoints: obedience,

@@ -28,12 +28,12 @@ export function StatTile({ stat }: { stat: StatCard }) {
       style={{ borderTop: `2px solid ${color}` }}
     >
       <div className="flex items-center justify-between gap-2">
-        <span className="flex items-center gap-1.5 font-mono text-[0.7rem] leading-tight text-ink-dim">
-          <Icon size={13} style={{ color }} />
+        <span className="flex items-center gap-1.5 font-mono text-[0.8rem] leading-tight text-ink-dim">
+          <Icon size={15} style={{ color }} />
           {stat.label}
         </span>
         <span
-          className="shrink-0 font-mono text-[0.72rem] font-semibold tabular-nums"
+          className="shrink-0 font-mono text-[0.82rem] font-semibold tabular-nums"
           style={{
             color: flat ? "var(--color-ink-faint)" : up ? "var(--color-good)" : "var(--color-warn)",
           }}
@@ -44,12 +44,12 @@ export function StatTile({ stat }: { stat: StatCard }) {
 
       <div className="mt-5">
         <div className="flex items-baseline gap-1">
-          <span className="font-mono text-[2rem] font-semibold leading-none tracking-tight text-ink tabular-nums">
+          <span className="font-mono text-[2.35rem] font-semibold leading-none tracking-tight text-ink tabular-nums">
             {stat.value}
           </span>
-          <span className="font-mono text-sm text-ink-faint">{stat.unit}</span>
+          <span className="font-mono text-base text-ink-faint">{stat.unit}</span>
         </div>
-        <div className="mt-1.5 font-mono text-[0.66rem] text-ink-faint">{stat.caption}</div>
+        <div className="mt-1.5 font-mono text-[0.76rem] text-ink-faint">{stat.caption}</div>
       </div>
     </div>
   );

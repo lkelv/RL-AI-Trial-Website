@@ -45,10 +45,10 @@ function LogRow({ entry }: { entry: LogEntry }) {
       </span>
       <div className="min-w-0 flex-1">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="text-sm font-semibold text-ink">{entry.title}</span>
-          <span className="shrink-0 font-mono text-[0.68rem] text-ink-faint">{entry.timeLabel}</span>
+          <span className="text-base font-semibold text-ink">{entry.title}</span>
+          <span className="shrink-0 font-mono text-xs text-ink-faint">{entry.timeLabel}</span>
         </div>
-        <p className="mt-0.5 text-xs leading-snug text-ink-dim">{entry.detail}</p>
+        <p className="mt-0.5 text-sm leading-snug text-ink-dim">{entry.detail}</p>
       </div>
     </div>
   );
@@ -126,7 +126,7 @@ export function PerformanceDashboard() {
     >
       {/* header */}
       <div className="rl-reveal flex flex-wrap items-center gap-x-3 gap-y-2">
-        <h1 className="text-2xl text-ink sm:text-3xl">{data.studentName}</h1>
+        <h1 className="text-3xl text-ink sm:text-4xl">{data.studentName}</h1>
         <Badge color="mint" dot>
           {data.term}
         </Badge>
@@ -152,8 +152,8 @@ export function PerformanceDashboard() {
         style={{ height: "clamp(160px, 26vh, 250px)", animationDelay: "260ms" }}
       >
         <div className="mb-1 flex items-center justify-between">
-          <h2 className="font-display text-base text-ink">Progress over time</h2>
-          <span className="text-xs text-ink-faint">Homework score &amp; obedience by week</span>
+          <h2 className="font-display text-lg text-ink">Progress over time</h2>
+          <span className="text-sm text-ink-faint">Homework score &amp; class performance by week</span>
         </div>
         <div className="min-h-0 flex-1">
           <LineChart data={data.chart} />
@@ -166,7 +166,7 @@ export function PerformanceDashboard() {
         style={{ animationDelay: "340ms" }}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-line/60 px-4 py-3">
-          <h2 className="font-display text-base text-ink">Announcements &amp; log</h2>
+          <h2 className="font-display text-lg text-ink">Announcements &amp; log</h2>
           <Badge color="amber">{data.log.length} updates</Badge>
         </div>
         <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto p-4">

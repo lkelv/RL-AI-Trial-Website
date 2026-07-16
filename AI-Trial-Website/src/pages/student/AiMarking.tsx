@@ -40,15 +40,15 @@ const nextFollowId = () => `f-${followIdCounter++}`;
 // Canned placeholder replies — swapped for the real script later.
 const REATTEMPT_REPLY =
   "Thanks — I've compared your reattempt against your first submission. " +
-  "[Placeholder] Q4 is now corrected: notation is right and full marks are awarded. " +
-  "Q6 still needs one more line of working. Provisional updated score: 19 / 20.";
+  "[Placeholder] Q2d is now corrected: the interval direction is right, so full marks are awarded. " +
+  "Q3c still needs the correct y-values for the stationary points. Provisional updated score: 31 / 40.";
 const QUESTION_REPLY =
   "[Placeholder response] Good question — in the full version I'll walk you through " +
   "this against your marked paper, step by step. For now this is illustrative demo text.";
 
 const FOLLOW_SUGGESTIONS = [
-  "Why did I lose marks on Q4?",
-  "How should I show working in Q6?",
+  "Why did I lose marks on Q3c?",
+  "How should I handle the interval in Q2d?",
 ];
 
 /** Below the marked paper: the student can ask follow-up questions or submit a
@@ -327,15 +327,16 @@ export default function AiMarking() {
               </span>
               <div className="flex-1">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-mono text-3xl font-semibold text-ink">18</span>
-                  <span className="font-mono text-lg text-ink-dim">/ 20</span>
+                  <span className="font-mono text-3xl font-semibold text-ink">29</span>
+                  <span className="font-mono text-lg text-ink-dim">/ 40</span>
                   <Badge color="mint" className="ml-1">
-                    90%
+                    72.5%
                   </Badge>
                 </div>
                 <p className="mt-1 text-sm text-ink-dim">
-                  Strong work, clear method throughout. Watch your notation in Q4
-                  and show one more line of working in Q6.
+                  Solid work overall — a perfect Q1 and a strong Q2. Focus on trig
+                  stationary points (Q3c) and careful derivative substitution (Q3f);
+                  the multiple-choice section (5/10) is worth another look.
                 </p>
               </div>
               <Button variant="outline" onClick={() => { setPhase("upload"); setFileName(null); }}>
